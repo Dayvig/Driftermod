@@ -104,7 +104,7 @@ public class QueenMod implements
 
     // Character assets
     private static final String THE_DEFAULT_BUTTON = "QueenModResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "QueentResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String THE_DEFAULT_PORTRAIT = "QueenModResources/images/charSelect/DefaultCharacterPortraitBG.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "QueenModResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "QueenModResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "QueenModResources/images/char/defaultCharacter/corpse.png";
