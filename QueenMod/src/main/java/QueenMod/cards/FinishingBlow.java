@@ -62,16 +62,15 @@ public class FinishingBlow extends AbstractDynamicCard {
         if (!canUse) {
             return false;
         }
-
-        if (count >= 10){
+        if (count >= 8){
             return true;
         }
         else {
-            if (count == 9){
-                this.cantUseMessage = "I need to play "+(10-count)+" more card this turn!";
+            if (count == 7){
+                this.cantUseMessage = "I need to play "+(8-count)+" more card this turn!";
             }
             else {
-                this.cantUseMessage = "I need to play " + (10 - count) + " more cards this turn!";
+                this.cantUseMessage = "I need to play " + (8 - count) + " more cards this turn!";
             }
             return false;
         }

@@ -45,38 +45,7 @@ public class StingerPower extends AbstractPower implements CloneablePowerInterfa
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.updateExistingHornets();
         updateDescription();
-    }
-
-    private void updateExistingHornets() {
-        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.cardID.equals(Hornet.ID)) {
-                if (!c.upgraded) {
-                    c.baseDamage = 11 + this.amount;
-                } else {
-                    c.baseDamage = 15 + this.amount;
-                }
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.cardID.equals(Hornet.ID)) {
-                if (!c.upgraded) {
-                    c.baseDamage = 11 + this.amount;
-                } else {
-                    c.baseDamage = 15 + this.amount;
-                }
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c.cardID.equals(Hornet.ID)) {
-                if (!c.upgraded) {
-                    c.baseDamage = 11 + this.amount;
-                } else {
-                    c.baseDamage = 15 + this.amount;
-                }
-            }
-        }
     }
 
     @Override
@@ -92,11 +61,6 @@ public class StingerPower extends AbstractPower implements CloneablePowerInterfa
        }
     }
 
-    @Override
-    public void onUseCard(AbstractCard c, UseCardAction a){
-        this.updateExistingHornets();
-    }
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         if (amount == 1) {

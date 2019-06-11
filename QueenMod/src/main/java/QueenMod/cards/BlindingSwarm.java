@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static QueenMod.QueenMod.makeCardPath;
 
-public class FallBack extends AbstractDynamicCard {
+public class BlindingSwarm extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -20,7 +20,7 @@ public class FallBack extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = QueenMod.makeID(FallBack.class.getSimpleName());
+    public static final String ID = QueenMod.makeID(BlindingSwarm.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -41,9 +41,10 @@ public class FallBack extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public FallBack() {
+    public BlindingSwarm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
+        baseMagicNumber = magicNumber = 5;
     }
 
     // Actions the card should do.
@@ -58,6 +59,7 @@ public class FallBack extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(-1);
             initializeDescription();
         }
     }

@@ -29,10 +29,7 @@ public class ExhaustAllBeesAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startingDuration) {
-            Iterator var1 = AbstractDungeon.player.hand.group.iterator();
-            while(var1.hasNext()) {
-                AbstractCard c = (AbstractCard)var1.next();
-                System.out.println(c.cardID);
+            for (AbstractCard c : AbstractDungeon.player.hand.group){
                 if (c.cardID.equals(Hornet.ID) ||
                         c.cardID.equals(BumbleBee.ID) ||
                         c.cardID.equals(Drone.ID) ||
@@ -46,12 +43,10 @@ public class ExhaustAllBeesAction extends AbstractGameAction {
                             new SwarmPower(AbstractDungeon.player, AbstractDungeon.player, this.bee), this.bee));
                 }
             }
-
             this.isDone = true;
             if (AbstractDungeon.player.exhaustPile.size() >= 20) {
                 UnlockTracker.unlockAchievement("THE_PACT");
             }
         }
-
     }
 }

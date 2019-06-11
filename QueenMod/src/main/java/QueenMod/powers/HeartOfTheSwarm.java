@@ -2,10 +2,8 @@ package QueenMod.powers;
 
 import QueenMod.QueenMod;
 import QueenMod.actions.DistributeSwarmAction;
-import QueenMod.cards.CalculatedAttack;
-import QueenMod.cards.FallBack;
-import QueenMod.cards.KillerBee;
-import QueenMod.cards.SwarmEconomics;
+import QueenMod.cards.*;
+import QueenMod.cards.BlindingSwarm;
 import QueenMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -20,6 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static QueenMod.QueenMod.makePowerPath;
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardTarget.ALL_ENEMY;
@@ -88,7 +87,13 @@ public class HeartOfTheSwarm extends AbstractPower implements CloneablePowerInte
         if (AbstractDungeon.player.hasPower(SwarmPower.POWER_ID)) {
             totalSwarm += AbstractDungeon.player.getPower(SwarmPower.POWER_ID).amount;
         }
-        if (c.cardID.equals(CalculatedAttack.ID) && totalSwarm > 1){
+        if (c.cardID.equals(Frenzy.ID) && totalSwarm != 0){
+            AbstractDungeon.actionManager.addToBottom(new DistributeSwarmAction(c, true, totalSwarm, a));
+        }
+        if (c.cardID.equals(Mark.ID) && totalSwarm != 0){
+            AbstractDungeon.actionManager.addToBottom(new DistributeSwarmAction(c, true, totalSwarm, a));
+        }
+        else if (c.cardID.equals(CalculatedAttack.ID) && totalSwarm > 1){
             if (!a.target.isDying || !a.target.isDeadOrEscaped()) {
                 int temp = totalSwarm / 2;
                 totalSwarm -= temp;
@@ -97,11 +102,17 @@ public class HeartOfTheSwarm extends AbstractPower implements CloneablePowerInte
                 AbstractDungeon.actionManager.addToBottom(new DistributeSwarmAction(c, false, totalSwarm, a));
             }
         }
-        else if (c.cardID.equals(FallBack.ID) && totalSwarm != 0){
+        else if (c.cardID.equals(BlindingSwarm.ID) && totalSwarm != 0){
             System.out.println("Trace");
             AbstractCard tmp = c;
             tmp.target = ALL_ENEMY;
             AbstractDungeon.actionManager.addToBottom(new DistributeSwarmAction(tmp, true, totalSwarm, a));
+            int n = totalSwarm/c.magicNumber;
+            if (n > 0) {
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, n, false), n));
+                }
+            }
         }
         else if (c.cardID.equals(SwarmEconomics.ID) && totalSwarm != 0){
             int temp = totalSwarm;

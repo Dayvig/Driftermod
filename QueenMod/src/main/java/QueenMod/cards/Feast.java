@@ -62,8 +62,8 @@ public class Feast extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new VFXAction(new BiteEffect(m.hb_x, m.hb_y)));
         AbstractDungeon.actionManager.addToBottom(new FeastAction(m, new DamageInfo(p, damage, damageTypeForTurn), this.magicNumber));
+        AbstractDungeon.actionManager.addToTop(new VFXAction(new BiteEffect(m.hb_x, m.hb_y)));
     }
 
     @Override

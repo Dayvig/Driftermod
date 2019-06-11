@@ -2,6 +2,7 @@ package QueenMod.cards;
 
 import QueenMod.QueenMod;
 import QueenMod.actions.RecruitAction;
+import QueenMod.actions.updateExistingHornetsAction;
 import QueenMod.characters.TheQueen;
 import QueenMod.powers.StingerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -53,8 +54,10 @@ public class SharpStingers extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new RecruitAction(new Hornet(),2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new StingerPower(p,p,this.magicNumber),this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new RecruitAction(new Hornet(),2));
+        AbstractDungeon.actionManager.addToBottom(new updateExistingHornetsAction());
+
     }
 
     //Upgraded stats.

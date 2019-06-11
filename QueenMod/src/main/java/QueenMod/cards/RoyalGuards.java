@@ -56,6 +56,7 @@ public class RoyalGuards extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.isInnate = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

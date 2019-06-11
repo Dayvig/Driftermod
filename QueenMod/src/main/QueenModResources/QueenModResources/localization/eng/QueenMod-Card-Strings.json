@@ -18,12 +18,12 @@
   },
   "QueenMod:DefendOrder": {
     "NAME": "Defend Order",
-    "DESCRIPTION": "Gain !B! block. queenmod:Recruit a queenmod:Bumblebee.",
-    "UPGRADE_DESCRIPTION": "Gain !B! block. queenmod:Recruit !M! queenmod:Bumblebees."
+    "DESCRIPTION": "Gain !B! block. queenmod:Recruit a queenmod:Bumblebee. Recall your queenmod:Swarm.",
+    "UPGRADE_DESCRIPTION": "Gain !B! block. queenmod:Recruit !M! queenmod:Bumblebees. Recall your queenmod:Swarm."
   },
   "QueenMod:BumbleBee": {
     "NAME": "BumbleBee",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. Recall your queenmod:Swarm."
   },
   "QueenMod:MosquitoPlatoon": {
     "NAME": "Mosquito Platoon",
@@ -31,7 +31,7 @@
   },
   "QueenMod:GatheringSwarm": {
     "NAME": "Gathering Swarm",
-    "DESCRIPTION": "At the start of your turn, spend !M! queenmod:Nectar to gain !M! queenmod:Swarm."
+    "DESCRIPTION": "At the start of your turn, spend !M! queenmod:Nectar to gain !M! queenmod:Swarm. Recall your #queenmod:Swarm"
   },
   "QueenMod:Godcard": {
     "NAME": "God Card",
@@ -39,7 +39,7 @@
   },
   "QueenMod:HexGuard": {
     "NAME": "Hex Guard",
-    "DESCRIPTION": "Gain !B! Block. Spend queenmod:Nectar to Empower."
+    "DESCRIPTION": "Gain !B! Block. Spend queenmod:Nectar to Empower. Recall your #queenmod:Swarm."
   },
   "QueenMod:HoneycombSmash": {
     "NAME": "Honeycomb Smash",
@@ -56,7 +56,7 @@
   },
   "QueenMod:Assimilate": {
     "NAME": "Assimilate",
-    "DESCRIPTION": "Exhaust all queenmod:Hive cards in your hand. Gain !M! queenmod:Swarm for each."
+    "DESCRIPTION": "Exhaust all queenmod:Hive cards in your hand. Gain !M! queenmod:Swarm for each. Recall your queenmod:Swarm."
   },
   "QueenMod:HoneyBee": {
     "NAME": "Honey Bee",
@@ -82,8 +82,8 @@
   },
   "QueenMod:Beekeeping": {
     "NAME": "Beekeeping",
-    "DESCRIPTION": "Exhaust a card in your hand. Add a queenmod:Drone from your draw pile to your hand. Recruit a queenmod:Bumblebee.",
-    "UPGRADE_DESCRIPTION": "Exhaust a card in your hand. Add a queenmod:Drone from your draw pile to your hand. Recruit 2 queenmod:Bumblebees."
+    "DESCRIPTION": "Exhaust a card in your hand. Add a queenmod:Drone from your draw pile to your hand. queenmod:Recruit a queenmod:Bumblebee. Recall your queenmod:Swarm",
+    "UPGRADE_DESCRIPTION": "Exhaust a card in your hand. Add a queenmod:Drone from your draw pile to your hand. queenmod:Recruit an upgraded queenmod:Bumblebee. Recall your queenmod:Swarm"
   },
   "QueenMod:Metamorphosis": {
     "NAME": "Metamorphosis",
@@ -126,7 +126,7 @@
   },
   "QueenMod:Mark": {
     "NAME": "Mark",
-    "DESCRIPTION": "Apply !M! Vulnerable and queenmod:Pollinate."
+    "DESCRIPTION": "Apply !M! Vulnerable, !M! queenmod:Pollinate and your queenmod:Swarm for the turn."
   },
   "QueenMod:SwarmTactics": {
     "NAME": "Swarm Tactics",
@@ -149,7 +149,7 @@
   },
   "QueenMod:PerfectLanding": {
     "NAME": "Perfect Landing",
-    "DESCRIPTION": "queenmod:Finisher. If you've played 5 or more cards this turn, gain !B! block."
+    "DESCRIPTION": "queenmod:Finisher. If you've played 5 or more cards this turn, gain !B! block. Recall your #queenmod:Swarm."
   },
   "QueenMod:CalculatedAttack": {
   "NAME": "Calculated Attack",
@@ -169,7 +169,7 @@
   },
   "QueenMod:CrossGuard": {
     "NAME": "Cross-guard",
-    "DESCRIPTION": "Gain !B! Block for each Attack in your hand."
+    "DESCRIPTION": "Gain !B! Block for each Attack in your hand. Recall your queenmod:Swarm."
   },
   "QueenMod:EvolveWings": {
     "NAME": "Evolve Wings",
@@ -177,11 +177,11 @@
   },
   "QueenMod:Anticipate": {
     "NAME": "Anticipate",
-    "DESCRIPTION": "Gain !B! block. Add a queenmod:Drone from your draw pile to your hand. queenmod:Recruit a queenmod:Hive card based on enemy intent.",
+    "DESCRIPTION": "Add a queenmod:Drone from your draw pile to your hand. queenmod:Recruit a queenmod:Hive card based on enemy intent.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! block. Add a Bumblebee to your hand.",
-      "Gain !B! block. Add a Hornet to your hand.",
-      "Gain !B! block. Add a Honeybee to your hand.",
+      "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Bumblebee to your hand.",
+      "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Hornet to your hand.",
+      "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Honeybee to your hand.",
       "Gain !B! block. Add a Drone to your hand."
     ]
   },
@@ -198,9 +198,9 @@
     "DESCRIPTION": "Deal !D! damage. Inflict !M! queenmod:Pollinate.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage and inflict !M! queenmod:Pollinate to all enemies."
   },
-  "QueenMod:FallBack": {
-    "NAME": "Fall Back",
-    "DESCRIPTION": "Gain !B! Block. Distribute your queenmod:Swarm among all enemies for the turn."
+  "QueenMod:BlindingSwarm": {
+    "NAME": "Blinding Swarm",
+    "DESCRIPTION": "Gain !B! Block. Distribute your queenmod:Swarm among all enemies for the turn and inflict 1 Weak to all enemies for every !M! queenmod:Swarm."
   },
   "QueenMod:SecretWeapon": {
     "NAME": "Secret Weapon",
@@ -225,7 +225,7 @@
   },
   "QueenMod:BumbleBeeCommander": {
     "NAME": "Bumblebee Commander",
-    "DESCRIPTION": "Gain !B! Block. When you play a queenmod:Hive card this turn, gain !M! Block next turn."
+    "DESCRIPTION": "Gain !B! Block. When you play a queenmod:Hive card this turn, gain !M! Block next turn. Recall your queenmod:Swarm."
   },
   "QueenMod:DroneCommander": {
     "NAME": "Drone Commander",
@@ -275,7 +275,7 @@
   },
   "QueenMod:PlanAhead":{
     "NAME": "Plan Ahead",
-    "DESCRIPTION": "Choose attack or skill. Add !M! of the chosen from your draw pile to the top at the end of the turn."
+    "DESCRIPTION": "queenmod:Scry 10."
   },
   "QueenMod:RelentlessAssault":{
   "NAME": "Relentless Assault",
@@ -291,7 +291,7 @@
   },
   "QueenMod:Defend":{
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. Recall your queenmod:Swarm."
   },
   "QueenMod:Recruit":{
     "NAME": "Recruit",
@@ -299,7 +299,7 @@
   },
   "QueenMod:KillerBee":{
     "NAME": "Killer Bee",
-    "DESCRIPTION": "Deal !D! damage. Doubles every turn this is in your draw pile."
+    "DESCRIPTION": "Deal !D! damage. While this is in your draw pile, its damage is doubled each turn until played."
   },
   "QueenMod:FlankingStrike":{
     "NAME": "Flanking Strike",
@@ -312,7 +312,7 @@
   },
   "QueenMod:Regroup":{
     "NAME": "Regroup",
-    "DESCRIPTION": "Gain !B! block. Shuffle your discard pile into your deck."
+    "DESCRIPTION": "Gain !B! block. Shuffle your discard pile into your deck. Recall your #queenmod:Swarm."
   },
   "QueenMod:WarTrumpet":{
     "NAME": "War Trumpet",
@@ -346,19 +346,19 @@
   },
   "QueenMod:Reposition":{
     "NAME": "Reposition",
-    "DESCRIPTION": "Gain 1 Strength. queenmod:Recruit a queenmod:Hornet."
+    "DESCRIPTION": "Gain 1 Strength. queenmod:Recruit a queenmod:Hornet. Recall your #queenmod:Swarm."
   },
   "QueenMod:FullRetreat":{
     "NAME": "Full Retreat",
-    "DESCRIPTION": "Gain !B! block. Shuffle your hand into your draw pile."
+    "DESCRIPTION": "Gain !B! Block. Shuffle your hand into your draw pile. Recall your #queenmod:Swarm."
   },
   "QueenMod:Fortify":{
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !M! block for each queenmod:Hive card in your draw pile."
+    "DESCRIPTION": "Gain !M! block for each queenmod:Hive card in your draw pile. Recall your #queenmod:Swarm."
   },
   "QueenMod:HoldPosition":{
     "NAME": "Hold Position",
-    "DESCRIPTION": "Gain !B! block. Add 2 queenmod:Drones to your draw pile."
+    "DESCRIPTION": "Gain !B! block. Add 2 queenmod:Drones to your draw pile. Recall your #queenmod:Swarm."
   },
   "QueenMod:Rally":{
     "NAME": "Rally",
@@ -399,15 +399,19 @@
   },
   "QueenMod:Blitz": {
     "NAME": "Blitz",
-    "DESCRIPTION": "Deal !D! damage. Increase this card's damage this combat by 1 for each card played this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. Increase this card's damage this combat by 1 for each card played this turn."
+    "DESCRIPTION": "Deal !D! damage. Damages increases by 1 for each card played this turn and lasts for this combat when played.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. Damages increases by 1 for each card played this turn and lasts for this combat when played."
   },
   "QueenMod:SupplyLines": {
     "NAME": "Supply Lines",
-    "DESCRIPTION": "Spend queenmod:Nectar to gain queenmod:Swarm."
+    "DESCRIPTION": "Spend queenmod:Nectar to gain queenmod:Swarm. Recall your #queenmod:Swarm."
   },
   "QueenMod:Incubate": {
     "NAME": "Incubate",
-    "DESCRIPTION": "Gain !M! queenmod:Swarm."
+    "DESCRIPTION": "Gain !M! queenmod:Swarm. Recall your queenmod:Swarm."
+  },
+  "QueenMod:Frenzy": {
+    "NAME": "Frenzy",
+    "DESCRIPTION": "Gain !M! queenmod:Swarm. Apply your #queenmod:Swarm to an enemy for the turn."
   }
 }

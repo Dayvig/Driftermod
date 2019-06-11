@@ -30,7 +30,7 @@ public class Metamorphosis extends AbstractDynamicCard implements ModalChoice.Ca
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheQueen.Enums.COLOR_YELLOW;
     private static final int COST = 1;  // COST = ${COST}

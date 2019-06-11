@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
@@ -38,6 +40,8 @@ public class KillerQueen extends AbstractDynamicCard {
     public static final String EXTENDED_DESCRIPTION = "I must have more Attacks than Skills and Powers to play this!";
     private static final int DAMAGE = 24;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 6;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     // /STAT DECLARATION/
 
@@ -60,6 +64,8 @@ public class KillerQueen extends AbstractDynamicCard {
         if (!canUse) {
             return false;
         } else {
+            this.rawDescription = DESCRIPTION;
+            initializeDescription();
             int numAttacks = 0;
             int numOther = 0;
             for (AbstractCard c : p.hand.group){
@@ -74,6 +80,8 @@ public class KillerQueen extends AbstractDynamicCard {
                 if (c.type.equals(CardType.ATTACK)){numAttacks++;}
                 else if (c.type.equals(CardType.SKILL) || c.type.equals(CardType.POWER)){numOther++;}
             }
+            this.rawDescription = DESCRIPTION + " NL Other: " +numOther+" | Attacks: "+numAttacks;
+            initializeDescription();
             if (numAttacks > numOther){return true;}
             else {
                 this.cantUseMessage = EXTENDED_DESCRIPTION;

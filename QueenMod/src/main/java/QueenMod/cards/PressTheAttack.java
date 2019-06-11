@@ -47,7 +47,7 @@ public class PressTheAttack extends AbstractDynamicCard {
     public PressTheAttack() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.baseMagicNumber = this.magicNumber = 7;
+        this.baseMagicNumber = this.magicNumber = 6;
         this.tags.add(CardTags.STRIKE);
     }
 

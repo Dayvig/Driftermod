@@ -42,8 +42,7 @@ public class Beekeeping extends AbstractDynamicCard {
 
     public Beekeeping() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
+        this.baseMagicNumber = magicNumber = 1;
     }
 
 
@@ -53,11 +52,13 @@ public class Beekeeping extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p,p,magicNumber,false));
         for (AbstractCard c : AbstractDungeon.player.drawPile.group){
             if (c.cardID.equals(Drone.ID)) {
-                AbstractDungeon.actionManager.addToBottom(new DrawToHandAction(new Drone()));
+                AbstractDungeon.actionManager.addToTop(new DrawToHandAction(c));
                 break;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new RecruitAction(new BumbleBee(), magicNumber));
+        AbstractCard d = new BumbleBee();
+        if (upgraded){ d.upgrade(); }
+        AbstractDungeon.actionManager.addToBottom(new RecruitAction(d, magicNumber));
     }
 
 
@@ -66,7 +67,6 @@ public class Beekeeping extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -31,10 +31,12 @@ public class RecruitAction extends AbstractGameAction {
             for (AbstractCard c : g.group){
                 if (c.cardID.equals(Drone.ID)){
                     if (!c.upgraded) {
-                        AbstractDungeon.actionManager.addToBottom(new SwapCardAction(c, cardToReplace, g));
+                        AbstractDungeon.actionManager.addToTop(new SwapCardAction(c, cardToReplace, g));
+                        AbstractDungeon.player.hand.refreshHandLayout();
                     }
                     else {
-                        AbstractDungeon.actionManager.addToBottom(new SwapCardAction(c, cardToReplaceu, g));
+                        AbstractDungeon.actionManager.addToTop(new SwapCardAction(c, cardToReplaceu, g));
+                        AbstractDungeon.player.hand.refreshHandLayout();
                     }
                     numTimes--;
                     if (numTimes <= 0) {
@@ -54,8 +56,7 @@ public class RecruitAction extends AbstractGameAction {
                 System.out.println("Size: "+upgradeMatrix.size());
                 while (!upgradeMatrix.isEmpty()) {
                         AbstractCard c1 = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()-1));
-                        AbstractDungeon.actionManager.addToBottom(new SwapCardAction(c1, cardToReplace, g));
-                        System.out.println("Trace");
+                        AbstractDungeon.actionManager.addToTop(new SwapCardAction(c1, cardToReplace, g));
                         numTimes--;
                         if (numTimes <= 0) {
                             this.isDone = true;

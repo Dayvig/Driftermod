@@ -9,8 +9,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 import static QueenMod.QueenMod.makeCardPath;
 
@@ -37,25 +40,24 @@ public class Anticipate extends AbstractDynamicCard {
     public static final CardColor COLOR = TheQueen.Enums.COLOR_YELLOW;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_BLOCK = 3;
+    private static final int UPGRADED_COST = 0;
+
     public AbstractMonster hoverTarget = null;
+    public AbstractMonster.Intent intentions;
     // /STAT DECLARATION/
 
 
     public Anticipate() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = BLOCK;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,this.block));
         for (AbstractCard c : AbstractDungeon.player.drawPile.group){
             if (c.cardID.equals(Drone.ID)) {
-                AbstractDungeon.actionManager.addToBottom(new DrawToHandAction(new Drone()));
+                AbstractDungeon.actionManager.addToTop(new DrawToHandAction(c));
                 break;
             }
         }
@@ -67,62 +69,54 @@ public class Anticipate extends AbstractDynamicCard {
         {
             AbstractDungeon.actionManager.addToBottom(new RecruitAction(new BumbleBee(), 1));
         }
-        else if (m.intent.equals(AbstractMonster.Intent.BUFF)|| m.intent.equals(AbstractMonster.Intent.DEFEND_BUFF)){
+        else if (m.intent.equals(AbstractMonster.Intent.BUFF)|| m.intent.equals(AbstractMonster.Intent.DEFEND_BUFF) ||
+                 m.intent.equals(AbstractMonster.Intent.DEBUFF) || m.intent.equals(AbstractMonster.Intent.DEFEND_DEBUFF)){
             AbstractDungeon.actionManager.addToBottom(new RecruitAction(new Hornet(), 1));
-        }
-        else if (m.intent.equals(AbstractMonster.Intent.DEBUFF) || m.intent.equals(AbstractMonster.Intent.DEFEND_DEBUFF)){
-            AbstractDungeon.actionManager.addToBottom(new RecruitAction(new HoneyBee(), 1));
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new RecruitAction(new HoneyBee(), 1));
         }
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
     }
 
     @Override
     public void update() {
         super.update();
-        if (hoverTarget == null){
+        if (AbstractDungeon.getCurrRoom().monsters.hoveredMonster == null){
+            this.rawDescription = DESCRIPTION;
+            initializeDescription();
+            System.out.println("To normal");
             return;
         }
-        if (!hoverTarget.hb.hovered){
-            this.rawDescription = DESCRIPTION;
+        intentions = AbstractDungeon.getCurrRoom().monsters.hoveredMonster.intent;
+        if (intentions.equals(AbstractMonster.Intent.ATTACK) ||
+                intentions.equals(AbstractMonster.Intent.ATTACK_BUFF) ||
+                intentions.equals(AbstractMonster.Intent.ATTACK_DEBUFF) ||
+                intentions.equals(AbstractMonster.Intent.ATTACK_DEFEND)){
+            this.rawDescription = EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+            System.out.println("bumblebee");
         }
-        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (AbstractDungeon.player.isDraggingCard) {
-                hoverTarget = m;
-                if (m.intent.equals(AbstractMonster.Intent.ATTACK) ||
-                        m.intent.equals(AbstractMonster.Intent.ATTACK_BUFF) ||
-                        m.intent.equals(AbstractMonster.Intent.ATTACK_DEBUFF) ||
-                        m.intent.equals(AbstractMonster.Intent.ATTACK_DEFEND)
-                )
-                {
-                    this.rawDescription = EXTENDED_DESCRIPTION[0];
-                    initializeDescription();
-                }
-                else if (m.intent.equals(AbstractMonster.Intent.BUFF)|| m.intent.equals(AbstractMonster.Intent.DEFEND_BUFF)){
-                    this.rawDescription = EXTENDED_DESCRIPTION[1];
-                    initializeDescription();
-                }
-                else if (m.intent.equals(AbstractMonster.Intent.DEBUFF) || m.intent.equals(AbstractMonster.Intent.DEFEND_DEBUFF)){
-                    this.rawDescription = EXTENDED_DESCRIPTION[2];
-                    initializeDescription();
-                }
-                else {
-                    this.rawDescription = EXTENDED_DESCRIPTION[3];
-                    initializeDescription();
-                }
-            }
+        else if (intentions.equals(AbstractMonster.Intent.BUFF)||
+                intentions.equals(AbstractMonster.Intent.DEFEND_BUFF) ||
+                intentions.equals(AbstractMonster.Intent.DEBUFF) ||
+                intentions.equals(AbstractMonster.Intent.DEFEND_DEBUFF)){
+            this.rawDescription = EXTENDED_DESCRIPTION[1];
+            initializeDescription();
+            System.out.println("hornet");
+        }
+        else {
+            this.rawDescription = EXTENDED_DESCRIPTION[2];
+            initializeDescription();
+            System.out.println("honeybee");
         }
     }
-
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_BLOCK);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

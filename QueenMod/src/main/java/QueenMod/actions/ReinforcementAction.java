@@ -15,11 +15,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
+import java.util.ArrayList;
+
 public class ReinforcementAction extends AbstractGameAction {
     AbstractMonster monster;
     int numCards;
     int numTimes;
-    AbstractCard[] upgradeMatrix;
+    ArrayList<AbstractCard> upgradeMatrix = new ArrayList<AbstractCard>();
     boolean isPlayer;
     AbstractCreature th;
     String Text = "My draw pile is empty!";
@@ -43,9 +45,6 @@ public class ReinforcementAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        upgradeMatrix = new AbstractCard[p.size()];
-        for (int i = 0;i<numTimes;i++) {
-            numCards = 0;
             for (AbstractCard c : p.group) {
                 if (c.cardID.equals(Hornet.ID) ||
                         c.cardID.equals(BumbleBee.ID) ||
@@ -53,16 +52,15 @@ public class ReinforcementAction extends AbstractGameAction {
                         c.cardID.equals(HornetCommander.ID) ||
                         c.cardID.equals(BumbleBeeCommander.ID) ||
                         c.cardID.equals(HoneyBeeCommander.ID)) {
-                    upgradeMatrix[numCards] = c;
-                    numCards++;
+                    upgradeMatrix.add(c);
                 }
             }
-            if (numCards == 0) {
+            if (upgradeMatrix.isEmpty()) {
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, Text, true));
                 this.isDone = true;
                 return;
             }
-            AbstractCard c1 = upgradeMatrix[AbstractDungeon.cardRandomRng.random(numCards-1)];
+            AbstractCard c1 = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()));
             c1.freeToPlayOnce = true;
             c1.applyPowers();
             AbstractDungeon.player.limbo.group.add(c1);
@@ -79,10 +77,10 @@ public class ReinforcementAction extends AbstractGameAction {
             else {
                 AbstractDungeon.actionManager.addToTop(new QueueCardAction(c1, null));
             }
-        }
         for (AbstractCard c : AbstractDungeon.player.limbo.group){
             AbstractDungeon.actionManager.addToBottom(new UnlimboAction(c));
         }
+        AbstractDungeon.player.hand.refreshHandLayout();
         this.isDone = true;
     }
 }

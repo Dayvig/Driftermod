@@ -24,7 +24,7 @@ public class MakeTempCardInDrawPileActionFast extends AbstractGameAction {
         UnlockTracker.markCardAsSeen(card.cardID);
         this.setValues(this.target, this.source, amount);
         this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = 0.5F;
+        this.duration = 0.0F;
         this.cardToMake = card;
         this.randomSpot = randomSpot;
         this.autoPosition = autoPosition;
@@ -42,7 +42,7 @@ public class MakeTempCardInDrawPileActionFast extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == 0.5F) {
+        if (this.duration == 0.0F) {
             AbstractCard c;
             int i;
             if (this.amount < 6) {

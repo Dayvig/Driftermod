@@ -42,6 +42,7 @@ public class FullRetreat extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int BLOCK = 16;
     private static final int UPGRADE_PLUS_BLOCK = 4;
+    AbstractCard tmp;
 
     // /STAT DECLARATION/
 
@@ -56,6 +57,9 @@ public class FullRetreat extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         for (AbstractCard c : p.hand.group) {
+            if (c.cardID.equals(Blitz.ID)){
+                ((Blitz) c).baseDamage = ((Blitz) c).damageAtStartOfTurn;
+            }
             if (!c.cardID.equals(FullRetreat.ID)) {
                 AbstractDungeon.actionManager.addToBottom(new FlybyAction(c));
             }

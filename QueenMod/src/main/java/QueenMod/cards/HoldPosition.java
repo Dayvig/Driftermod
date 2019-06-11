@@ -38,8 +38,7 @@ public class HoldPosition extends AbstractDynamicCard {
 
     public HoldPosition() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 2;
-        this.magicNumber = this.baseMagicNumber;
+        this.baseMagicNumber = magicNumber = 2;
         baseBlock = block = BLOCK;
     }
 

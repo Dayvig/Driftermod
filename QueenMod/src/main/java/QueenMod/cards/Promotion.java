@@ -7,7 +7,9 @@ import basemod.helpers.ModalChoice;
 import basemod.helpers.ModalChoiceBuilder;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static QueenMod.QueenMod.makeCardPath;
@@ -18,6 +20,8 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
     public static final String ID = QueenMod.makeID(Promotion.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
 
     // /TEXT DECLARATION/
@@ -444,6 +448,42 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
         return false;
         }
 
+
+        public void applyPowers() {
+            boolean containsHornet = false;
+            boolean containsBumblebee = false;
+            boolean containsHoneybee = false;
+            boolean containsDrone = false;
+            for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+                if (c.cardID.equals(Hornet.ID)) {
+                    containsHornet = true;
+                }
+                if (c.cardID.equals(BumbleBee.ID)) {
+                    containsBumblebee = true;
+                }
+                if (c.cardID.equals(HoneyBee.ID)) {
+                    containsHoneybee = true;
+                }
+                if (c.cardID.equals(Drone.ID)) {
+                    containsDrone = true;
+                }
+            }
+            if (containsHornet && !containsBumblebee && !containsHoneybee && !containsDrone){
+                this.rawDescription += " NL (Promotes a Hornet)";
+            }
+            else if (!containsHornet && containsBumblebee && !containsHoneybee && !containsDrone){
+                this.rawDescription += " NL (Promotes a Bumblebee)";
+            }
+            else if (!containsHornet && !containsBumblebee && containsHoneybee && !containsDrone){
+                this.rawDescription += " NL (Promotes a Honeybee)";
+            }
+            else if (!containsHornet && !containsBumblebee && !containsHoneybee && containsDrone){
+                this.rawDescription += " NL (Promotes a Drone)";
+            }
+            else {
+                this.rawDescription = DESCRIPTION;
+            }
+        }
     // Upgraded stats.
     @Override
     public void upgrade() {

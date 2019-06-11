@@ -22,7 +22,7 @@ public class HexGuard extends AbstractDynamicCard implements ModalChoice.Callbac
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheQueen.Enums.COLOR_YELLOW;
-    public static final int BLOCK = 12;
+    public static final int BLOCK = 10;
     public static final int UPGRADE_PLUS_BLOCK = 3;
     private ModalChoice modal;
 

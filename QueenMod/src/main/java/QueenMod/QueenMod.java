@@ -339,6 +339,8 @@ public class QueenMod implements
         // Don't comment out/delete these cards (yet). You need 1 of e0ach type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
 
+        BaseMod.addCard(new Frenzy());
+        BaseMod.addCard(new Recruit());
         BaseMod.addCard(new SupplyLines());
         BaseMod.addCard(new Blitz());
         BaseMod.addCard(new OverwhelmingPower());
@@ -379,7 +381,7 @@ public class QueenMod implements
         BaseMod.addCard(new InspiringStrike());
         BaseMod.addCard(new GeneralForm());
         BaseMod.addCard(new SecretWeapon());
-        BaseMod.addCard(new FallBack());
+        BaseMod.addCard(new BlindingSwarm());
         BaseMod.addCard(new PollenBlast());
         BaseMod.addCard(new MilitaryHandbook());
         BaseMod.addCard(new ScoutingParty());
@@ -415,7 +417,6 @@ public class QueenMod implements
         BaseMod.addCard(new Populate());
         BaseMod.addCard(new HoneycombSmash());
         BaseMod.addCard(new HexGuard());
-        BaseMod.addCard(new Godcard());
         BaseMod.addCard(new GatheringSwarm());
         BaseMod.addCard(new MosquitoPlatoon());
         BaseMod.addCard(new BumbleBee());
@@ -430,6 +431,8 @@ public class QueenMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(Frenzy.ID);
+        UnlockTracker.unlockCard(Recruit.ID);
         UnlockTracker.unlockCard(SupplyLines.ID);
         UnlockTracker.unlockCard(Blitz.ID);
         UnlockTracker.unlockCard(MatingDance.ID);
@@ -471,7 +474,7 @@ public class QueenMod implements
         UnlockTracker.unlockCard(ScoutingParty.ID);
         UnlockTracker.unlockCard(MilitaryHandbook.ID);
         UnlockTracker.unlockCard(PollenBlast.ID);
-        UnlockTracker.unlockCard(FallBack.ID);
+        UnlockTracker.unlockCard(BlindingSwarm.ID);
         UnlockTracker.unlockCard(SecretWeapon.ID);
         UnlockTracker.unlockCard(GeneralForm.ID);
         UnlockTracker.unlockCard(InspiringStrike.ID);

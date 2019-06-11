@@ -64,7 +64,7 @@
     "NAMES": [
       "dance"
     ],
-    "DESCRIPTION": "A dance is a random sequence of four card types that must be played in order. Attacks and Skills are more common than Powers."
+    "DESCRIPTION": "While this is in your hand, it will list a series of card types. Play them in sequence to reap the rewards!"
   },
   {
     "NAMES": [
@@ -97,9 +97,15 @@
     "DESCRIPTION": "Playing a finisher ends your turn immediately."
   },
   {
-    "NAMES": [
-      "drone+"
-    ],
-    "DESCRIPTION": "A Drone+ is a 0-cost skill that draw 2 cards and Exhausts."
-  }
+  "NAMES": [
+    "drone+"
+  ],
+  "DESCRIPTION": "A Drone+ is a 0-cost skill that draw 2 cards and Exhausts."
+},
+  {
+  "NAMES": [
+    "scry"
+  ],
+  "DESCRIPTION": "Look at the top X cards of your deck, and choose any number to send to your discard pile."
+}
 ]

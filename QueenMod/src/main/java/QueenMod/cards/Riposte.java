@@ -43,7 +43,9 @@ public class Riposte extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.isEthereal = true;
+        this.exhaust = true;
     }
+
     public Riposte(boolean isupgr){
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;

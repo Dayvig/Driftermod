@@ -30,7 +30,7 @@ public class GatherOrder extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheQueen.Enums.COLOR_YELLOW;
 
@@ -43,14 +43,14 @@ public class GatherOrder extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
-        this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = 5;
+        this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = 10;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Nectar(p, p, 5), 5));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Nectar(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new RecruitAction(new HoneyBee(),this.magicNumber));
     }
 
@@ -61,7 +61,7 @@ public class GatherOrder extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeMagicNumber(1);
-            this.upgradeDefaultSecondMagicNumber(3);
+            this.upgradeDefaultSecondMagicNumber(5);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

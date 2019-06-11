@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
+
 import static QueenMod.QueenMod.makeCardPath;
 
 public class Fleche extends AbstractDynamicCard {
@@ -42,7 +44,7 @@ public class Fleche extends AbstractDynamicCard {
         private static final int UPGRADE_PLUS_DAMAGE = 4;    // DAMAGE = ${DAMAGE}
 
     private int numLeft;
-    AbstractCard[] upgradeMatrix;
+    ArrayList<AbstractCard> upgradeMatrix = new ArrayList<AbstractCard>();
 
         // /STAT DECLARATION/
 
@@ -56,22 +58,20 @@ public class Fleche extends AbstractDynamicCard {
         // Actions the card should do.
         @Override
         public void use(AbstractPlayer p, AbstractMonster m) {
-            upgradeMatrix = new AbstractCard[AbstractDungeon.player.hand.size()+
-                    AbstractDungeon.player.drawPile.size()+
-                    AbstractDungeon.player.discardPile.size()];
-            for (int i=0;i<2;i++){
-                int numCards = 0;
                 for (AbstractCard c : p.drawPile.group) {
                     if (c.type.equals(CardType.SKILL)) {
-                        upgradeMatrix[numCards] = c;
-                        numCards++;
+                        upgradeMatrix.add(c);
                     }
                 }
-                if (!(numCards == 0)) {
-                    AbstractCard c1 = upgradeMatrix[AbstractDungeon.cardRandomRng.random(numCards)];
-                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c1, p.drawPile, true));
+                for (int i = 0; i<2;i++){
+                    if (!upgradeMatrix.isEmpty()) {
+                        AbstractCard tmp = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()));
+                        AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(tmp, p.drawPile, true));
+                    }
+                    else {
+                        break;
+                    }
                 }
-            }
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
 

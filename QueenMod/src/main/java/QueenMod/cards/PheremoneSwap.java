@@ -3,6 +3,7 @@ package QueenMod.cards;
 import QueenMod.QueenMod;
 import QueenMod.actions.SwapCardAction;
 import QueenMod.characters.TheQueen;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,7 +27,7 @@ public class PheremoneSwap extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheQueen.Enums.COLOR_YELLOW;
 
@@ -100,6 +101,7 @@ public class PheremoneSwap extends AbstractDynamicCard {
                 }
             }
         }
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 
 
@@ -108,7 +110,7 @@ public class PheremoneSwap extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(1);
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
