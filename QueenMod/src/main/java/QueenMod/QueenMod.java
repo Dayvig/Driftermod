@@ -97,7 +97,7 @@ public class QueenMod implements
     private static final String ENERGY_ORB_QUEEN = "QueenModResources/images/512/card_queen_orb.png";
     private static final String ENERGY_ORB_QUEEN_SMALL = "QueenModResources/images/512/card_queen_small_orb.png";
 
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "QueenModResources/images/512/bg_attack_default_gray";
+    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "QueenModResources/images/1024/bg_attack_default_gray.png";
     private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "QueenModResources/images/1024/bg_skill_default_gray.png";
     private static final String POWER_DEFAULT_GRAY_PORTRAIT = "QueenModResources/images/1024/bg_power_default_gray.png";
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "QueenModResources/images/1024/card_default_gray_orb.png";
@@ -360,7 +360,7 @@ public class QueenMod implements
         BaseMod.addCard(new KillerBee());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
-        BaseMod.addCard(new Recruit());
+        BaseMod.addCard(new Incubate());
         BaseMod.addCard(new Conscripts());
         BaseMod.addCard(new PlanAhead());
         BaseMod.addCard(new RelentlessAssault());
@@ -451,7 +451,7 @@ public class QueenMod implements
         UnlockTracker.unlockCard(KillerBee.ID);
         UnlockTracker.unlockCard(Strike.ID);
         UnlockTracker.unlockCard(Defend.ID);
-        UnlockTracker.unlockCard(Recruit.ID);
+        UnlockTracker.unlockCard(Incubate.ID);
         UnlockTracker.unlockCard(Conscripts.ID);
         UnlockTracker.unlockCard(SharpStingers.ID);
         UnlockTracker.unlockCard(EnergyBees.ID);

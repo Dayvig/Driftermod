@@ -295,7 +295,7 @@
   },
   "QueenMod:Recruit":{
     "NAME": "Recruit",
-    "DESCRIPTION": "Gain !M! queenmod:Swarm."
+    "DESCRIPTION": "queenmod:Recruit a queenmod:Hornet. NL queenmod:Recruit a queenmod:Bumblebee"
   },
   "QueenMod:KillerBee":{
     "NAME": "Killer Bee",
@@ -405,5 +405,9 @@
   "QueenMod:SupplyLines": {
     "NAME": "Supply Lines",
     "DESCRIPTION": "Spend queenmod:Nectar to gain queenmod:Swarm."
+  },
+  "QueenMod:Incubate": {
+    "NAME": "Incubate",
+    "DESCRIPTION": "Gain !M! queenmod:Swarm."
   }
 }

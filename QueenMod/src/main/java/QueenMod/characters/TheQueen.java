@@ -95,7 +95,10 @@ public class TheQueen extends CustomPlayer {
             "QueenModResources/images/char/defaultCharacter/orb/layer4d.png",
             "QueenModResources/images/char/defaultCharacter/orb/layer5d.png",};
 
+    //public static HornetCounter hornetctr;
+
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
+
 
     // =============== CHARACTER CLASS START =================
 
@@ -117,6 +120,8 @@ public class TheQueen extends CustomPlayer {
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 
+        //Texture t = TextureLoader.getTexture("QueenModResources/images/char/defaultCharacter/hornetCounter.png");
+        //HornetCounter hornetctr = new HornetCounter(t, 100.0F, 100.0F);
 
         // =============== ANIMATIONS =================
 
@@ -154,7 +159,7 @@ public class TheQueen extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         logger.info("Begin loading starter Deck Strings");
-        retVal.add(Recruit.ID);
+        retVal.add(Incubate.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
@@ -224,7 +229,7 @@ public class TheQueen extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Recruit();
+        return new Incubate();
     }
 
     // The class name as it appears next to your player name in-game
