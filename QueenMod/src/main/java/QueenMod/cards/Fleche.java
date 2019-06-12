@@ -65,7 +65,7 @@ public class Fleche extends AbstractDynamicCard {
                 }
                 for (int i = 0; i<2;i++){
                     if (!upgradeMatrix.isEmpty()) {
-                        AbstractCard tmp = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()));
+                        AbstractCard tmp = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()-1));
                         AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(tmp, p.drawPile, true));
                     }
                     else {

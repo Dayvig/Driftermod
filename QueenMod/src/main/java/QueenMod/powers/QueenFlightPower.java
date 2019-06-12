@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static QueenMod.QueenMod.makePowerPath;
@@ -59,6 +60,19 @@ public class QueenFlightPower extends AbstractPower implements CloneablePowerInt
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QueenFlightPower.POWER_ID,1));
         }
         return damageAmount/2;
+    }
+
+    @Override
+    public void atEndOfTurn(final boolean isPlayer) {
+        if (this.owner.hasPower(Nectar.POWER_ID) && this.owner.getPower(Nectar.POWER_ID).amount >= this.amount){
+            int n;
+            if (isUpgraded){ n = 4;}
+            else { n = 5; }
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, Nectar.POWER_ID, n));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this,1));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

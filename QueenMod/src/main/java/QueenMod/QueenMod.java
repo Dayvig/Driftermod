@@ -21,7 +21,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -389,7 +388,7 @@ public class QueenMod implements
         BaseMod.addCard(new MilitaryHandbook());
         BaseMod.addCard(new ScoutingParty());
         BaseMod.addCard(new Anticipate());
-        BaseMod.addCard(new EvolveWings());
+        BaseMod.addCard(new TakeFlight());
         BaseMod.addCard(new CrossGuard());
         BaseMod.addCard(new OrganizedWorkforce());
         BaseMod.addCard(new Feast());
@@ -474,7 +473,7 @@ public class QueenMod implements
         UnlockTracker.unlockCard(Feast.ID);
         UnlockTracker.unlockCard(OrganizedWorkforce.ID);
         UnlockTracker.unlockCard(CrossGuard.ID);
-        UnlockTracker.unlockCard(EvolveWings.ID);
+        UnlockTracker.unlockCard(TakeFlight.ID);
         UnlockTracker.unlockCard(Anticipate.ID);
         UnlockTracker.unlockCard(ScoutingParty.ID);
         UnlockTracker.unlockCard(MilitaryHandbook.ID);

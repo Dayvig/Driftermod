@@ -31,7 +31,7 @@
   },
   "QueenMod:GatheringSwarm": {
     "NAME": "Gathering Swarm",
-    "DESCRIPTION": "At the start of your turn, spend !M! queenmod:Nectar to gain !M! queenmod:Swarm. Recall your #queenmod:Swarm"
+    "DESCRIPTION": "At the start of your turn, spend !M! queenmod:Nectar to gain !M! queenmod:Swarm. Recall your queenmod:Swarm"
   },
   "QueenMod:Godcard": {
     "NAME": "God Card",
@@ -39,7 +39,7 @@
   },
   "QueenMod:HexGuard": {
     "NAME": "Hex Guard",
-    "DESCRIPTION": "Gain !B! Block. Spend queenmod:Nectar to Empower. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Gain !B! Block. Spend queenmod:Nectar to Empower. Recall your queenmod:Swarm."
   },
   "QueenMod:HoneycombSmash": {
     "NAME": "Honeycomb Smash",
@@ -149,7 +149,7 @@
   },
   "QueenMod:PerfectLanding": {
     "NAME": "Perfect Landing",
-    "DESCRIPTION": "queenmod:Finisher. If you've played 5 or more cards this turn, gain !B! block. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "queenmod:Finisher. If you've played 5 or more cards this turn, gain !B! block. Recall your queenmod:Swarm."
   },
   "QueenMod:CalculatedAttack": {
   "NAME": "Calculated Attack",
@@ -312,7 +312,7 @@
   },
   "QueenMod:Regroup":{
     "NAME": "Regroup",
-    "DESCRIPTION": "Gain !B! block. Shuffle your discard pile into your deck. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Gain !B! block. Shuffle your discard pile into your deck. Recall your queenmod:Swarm."
   },
   "QueenMod:WarTrumpet":{
     "NAME": "War Trumpet",
@@ -346,19 +346,19 @@
   },
   "QueenMod:Reposition":{
     "NAME": "Reposition",
-    "DESCRIPTION": "Gain 1 Strength. queenmod:Recruit a queenmod:Hornet. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Gain 1 Strength. queenmod:Recruit a queenmod:Hornet. Recall your queenmod:Swarm."
   },
   "QueenMod:FullRetreat":{
     "NAME": "Full Retreat",
-    "DESCRIPTION": "Gain !B! Block. Shuffle your hand into your draw pile. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Gain !B! Block. Shuffle your hand into your draw pile. Recall your queenmod:Swarm."
   },
   "QueenMod:Fortify":{
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !M! block for each queenmod:Hive card in your draw pile. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Gain !M! block for each queenmod:Hive card in your draw pile. Recall your queenmod:Swarm."
   },
   "QueenMod:HoldPosition":{
     "NAME": "Hold Position",
-    "DESCRIPTION": "Gain !B! block. Add 2 queenmod:Drones to your draw pile. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Gain !B! block. Add 2 queenmod:Drones to your draw pile. Recall your queenmod:Swarm."
   },
   "QueenMod:Rally":{
     "NAME": "Rally",
@@ -404,7 +404,7 @@
   },
   "QueenMod:SupplyLines": {
     "NAME": "Supply Lines",
-    "DESCRIPTION": "Spend queenmod:Nectar to gain queenmod:Swarm. Recall your #queenmod:Swarm."
+    "DESCRIPTION": "Spend queenmod:Nectar to gain queenmod:Swarm. Recall your queenmod:Swarm."
   },
   "QueenMod:Incubate": {
     "NAME": "Incubate",
@@ -412,7 +412,7 @@
   },
   "QueenMod:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Gain !M! queenmod:Swarm. Apply your #queenmod:Swarm to an enemy for the turn."
+    "DESCRIPTION": "Gain queenmod:Swarm equal to your Strength plus !M!. Apply your queenmod:Swarm to an enemy for the turn."
   },
   "QueenMod:SecretService": {
     "NAME": "Secret Service",

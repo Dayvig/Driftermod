@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static QueenMod.QueenMod.makeCardPath;
 
-public class EvolveWings extends AbstractDynamicCard {
+public class TakeFlight extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,7 +22,7 @@ public class EvolveWings extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = QueenMod.makeID(EvolveWings.class.getSimpleName());
+    public static final String ID = QueenMod.makeID(TakeFlight.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,7 +42,7 @@ public class EvolveWings extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public EvolveWings() {
+    public TakeFlight() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
     }

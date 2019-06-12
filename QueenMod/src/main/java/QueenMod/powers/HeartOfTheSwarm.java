@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static QueenMod.QueenMod.makePowerPath;
@@ -88,10 +89,15 @@ public class HeartOfTheSwarm extends AbstractPower implements CloneablePowerInte
             totalSwarm += AbstractDungeon.player.getPower(SwarmPower.POWER_ID).amount;
         }
         if (c.cardID.equals(Frenzy.ID) && totalSwarm != 0){
+            if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)){
+                totalSwarm += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
+            }
             AbstractDungeon.actionManager.addToBottom(new DistributeSwarmAction(c, true, totalSwarm, a));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(a.target, AbstractDungeon.player, SwarmPowerEnemy.POWER_ID));
         }
-        if (c.cardID.equals(Mark.ID) && totalSwarm != 0){
+       else if (c.cardID.equals(Mark.ID) && totalSwarm != 0){
             AbstractDungeon.actionManager.addToBottom(new DistributeSwarmAction(c, true, totalSwarm, a));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(a.target, AbstractDungeon.player, SwarmPowerEnemy.POWER_ID));
         }
         else if (c.cardID.equals(CalculatedAttack.ID) && totalSwarm > 1){
             if (!a.target.isDying || !a.target.isDeadOrEscaped()) {
