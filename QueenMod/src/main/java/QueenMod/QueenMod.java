@@ -21,6 +21,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -338,7 +339,9 @@ public class QueenMod implements
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of e0ach type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
-
+        BaseMod.addCard(new CallToArms());
+        BaseMod.addCard(new WASP());
+        BaseMod.addCard(new SecretService());
         BaseMod.addCard(new Frenzy());
         BaseMod.addCard(new Recruit());
         BaseMod.addCard(new SupplyLines());
@@ -431,6 +434,8 @@ public class QueenMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(WASP.ID);
+        UnlockTracker.unlockCard(SecretService.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(Recruit.ID);
         UnlockTracker.unlockCard(SupplyLines.ID);

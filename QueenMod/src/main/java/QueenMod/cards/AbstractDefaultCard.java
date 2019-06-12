@@ -14,8 +14,13 @@ public abstract class AbstractDefaultCard extends CustomCard {
 
     public int defaultSecondMagicNumber;        // Just like magic number, or any number for that matter, we want our regular, modifiable stat
     public int defaultBaseSecondMagicNumber;    // And our base stat - the number in it's base state. It will reset to that by default.
+    public int defaultThirdMagicNumber;
+    public int defaultBaseThirdMagicNumber;
     public boolean upgradedDefaultSecondMagicNumber; // A boolean to check whether the number has been upgraded or not.
+    public boolean upgradedDefaultThirdMagicNumber;
     public boolean isDefaultSecondMagicNumberModified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
+    public boolean isDefaultThirdMagicNumberModified;
+
 
     public AbstractDefaultCard(final String id,
                                final String name,
@@ -36,6 +41,7 @@ public abstract class AbstractDefaultCard extends CustomCard {
         isBlockModified = false;
         isMagicNumberModified = false;
         isDefaultSecondMagicNumberModified = false;
+        isDefaultThirdMagicNumberModified = false;
     }
 
     public void displayUpgrades() { // Display the upgrade - when you click a card to upgrade it
@@ -43,6 +49,10 @@ public abstract class AbstractDefaultCard extends CustomCard {
         if (upgradedDefaultSecondMagicNumber) { // If we set upgradedDefaultSecondMagicNumber = true in our card.
             defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Show how the number changes, as out of combat, the base number of a card is shown.
             isDefaultSecondMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
+        }
+        if (upgradedDefaultThirdMagicNumber) { // If we set upgradedDefaultSecondMagicNumber = true in our card.
+            defaultThirdMagicNumber = defaultBaseThirdMagicNumber; // Show how the number changes, as out of combat, the base number of a card is shown.
+            isDefaultThirdMagicNumberModified = true; // Modified = true, color it green to highlight that the number is being changed.
         }
 
     }
@@ -52,4 +62,11 @@ public abstract class AbstractDefaultCard extends CustomCard {
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber; // Set the number to be equal to the base value.
         upgradedDefaultSecondMagicNumber = true; // Upgraded = true - which does what the above method does.
     }
+
+    public void upgradeDefaultThirdMagicNumber(int amount) { // If we're upgrading (read: changing) the number. Note "upgrade" and NOT "upgraded" - 2 different things. One is a boolean, and then this one is what you will usually use - change the integer by how much you want to upgrade.
+        defaultBaseThirdMagicNumber += amount; // Upgrade the number by the amount you provide in your card.
+        defaultThirdMagicNumber = defaultBaseThirdMagicNumber; // Set the number to be equal to the base value.
+        upgradedDefaultThirdMagicNumber = true; // Upgraded = true - which does what the above method does.
+    }
+
 }

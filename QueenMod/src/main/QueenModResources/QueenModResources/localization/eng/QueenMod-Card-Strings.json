@@ -413,5 +413,18 @@
   "QueenMod:Frenzy": {
     "NAME": "Frenzy",
     "DESCRIPTION": "Gain !M! queenmod:Swarm. Apply your #queenmod:Swarm to an enemy for the turn."
+  },
+  "QueenMod:SecretService": {
+    "NAME": "Secret Service",
+    "DESCRIPTION": "Exhaust one of each type of queenmod:Hive card in your draw pile. Combine them into a W.A.S.P. and add it to your hand. Exhaust."
+  },
+  "QueenMod:WASP": {
+    "NAME": "W.A.S.P.",
+    "DESCRIPTION": ""
+  },
+  "QueenMod:CallToArms": {
+    "NAME": "Call to Arms",
+    "DESCRIPTION": "Fill your hand with queenmod:Drones from your draw pile. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Fill your hand with queenmod:Drones from your draw pile."
   }
 }
