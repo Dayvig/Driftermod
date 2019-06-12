@@ -53,6 +53,7 @@ public class WASP extends AbstractDynamicCard {
     int bumblebee;
     int honeybee;
     int drone;
+    public boolean playedBySwarm = false;
     String[]SSText = new String[7];
     // /STAT DECLARATION/
 
@@ -146,6 +147,9 @@ public class WASP extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (playedBySwarm && m.isDeadOrEscaped()){
+            m =  AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        }
         if (isHornet) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }

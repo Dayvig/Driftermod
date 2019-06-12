@@ -51,7 +51,8 @@ public class ReinforcementAction extends AbstractGameAction {
                         c.cardID.equals(HoneyBee.ID) ||
                         c.cardID.equals(HornetCommander.ID) ||
                         c.cardID.equals(BumbleBeeCommander.ID) ||
-                        c.cardID.equals(HoneyBeeCommander.ID)) {
+                        c.cardID.equals(HoneyBeeCommander.ID) ||
+                        c.cardID.equals(WASP.ID)) {
                     upgradeMatrix.add(c);
                 }
             }
@@ -71,6 +72,11 @@ public class ReinforcementAction extends AbstractGameAction {
             }
             else if (c1.cardID.equals(HornetCommander.ID)){
                 HornetCommander tmp = (HornetCommander) c1;
+                tmp.playedBySwarm = true;
+                AbstractDungeon.actionManager.addToTop(new QueueCardAction(c1, AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));
+            }
+            else if (c1.cardID.equals(WASP.ID)){
+                WASP tmp = (WASP) c1;
                 tmp.playedBySwarm = true;
                 AbstractDungeon.actionManager.addToTop(new QueueCardAction(c1, AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));
             }

@@ -2,6 +2,7 @@ package QueenMod.actions;
 
 import QueenMod.cards.Hornet;
 import QueenMod.cards.HornetCommander;
+import QueenMod.cards.WASP;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
@@ -13,14 +14,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HornetSwarmAction extends AbstractGameAction {
     private CardGroup HornetGroup;
+    private boolean asHornet;
 
     public HornetSwarmAction(AbstractCreature s) {
         this.source = s;
+        asHornet = false;
     }
 
     private void playAllHornets (CardGroup g){
         for (AbstractCard c : g.group) {
-            if (c.cardID.equals(Hornet.ID) || c.cardID.equals(HornetCommander.ID)) {
+            if (c.cardID.equals(WASP.ID)){
+                asHornet = ((WASP) c).isHornet;
+            }
+            if (c.cardID.equals(Hornet.ID) || c.cardID.equals(HornetCommander.ID) || asHornet)
+            {
                 c.costForTurn = 0;
                 c.applyPowers();
                 AbstractDungeon.player.limbo.group.add(c);
@@ -28,8 +35,12 @@ public class HornetSwarmAction extends AbstractGameAction {
                     Hornet tmp = (Hornet) c;
                     tmp.playedBySwarm = true;
                 }
-                else {
+                else if (c.cardID.equals(HornetCommander.ID)){
                     HornetCommander tmp = (HornetCommander) c;
+                    tmp.playedBySwarm = true;
+                }
+                else {
+                    WASP tmp = (WASP) c;
                     tmp.playedBySwarm = true;
                 }
                 AbstractDungeon.actionManager.addToTop(new QueueCardAction(c, AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));

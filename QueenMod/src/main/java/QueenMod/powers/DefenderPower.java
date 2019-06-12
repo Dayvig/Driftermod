@@ -3,6 +3,7 @@ package QueenMod.powers;
 import QueenMod.QueenMod;
 import QueenMod.actions.DrawToDiscardAction;
 import QueenMod.cards.BumbleBee;
+import QueenMod.cards.WASP;
 import QueenMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -80,6 +81,23 @@ public class DefenderPower extends AbstractPower implements CloneablePowerInterf
             }
             for (AbstractCard c : AbstractDungeon.player.drawPile.group){
                 if (c.cardID.equals(BumbleBee.ID) && !c.upgraded){
+                    c.applyPowers();
+                    damageAmount -= c.block;
+                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.owner.hb.cX, this.owner.hb.cY, AbstractGameAction.AttackEffect.SHIELD));
+                    if (!isUpgraded) {
+                        AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile, true));
+                    }
+                    else {
+                        AbstractDungeon.actionManager.addToBottom(new DrawToDiscardAction(c));
+                    }
+                    numTimes--;
+                    if (numTimes<=0){
+                        break;
+                    }
+                }
+            }
+            for (AbstractCard c : AbstractDungeon.player.drawPile.group){
+                if (c.cardID.equals(WASP.ID)){
                     c.applyPowers();
                     damageAmount -= c.block;
                     AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.owner.hb.cX, this.owner.hb.cY, AbstractGameAction.AttackEffect.SHIELD));

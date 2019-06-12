@@ -169,7 +169,6 @@ public class TheQueen extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Recruit.ID);
-        retVal.add(SecretService.ID);
 
         return retVal;
     }
