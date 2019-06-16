@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.util.ArrayList;
 
@@ -81,35 +83,35 @@ public class Anticipate extends AbstractDynamicCard {
     @Override
     public void update() {
         super.update();
-        if (AbstractDungeon.getCurrRoom().monsters.hoveredMonster == null){
-            this.rawDescription = DESCRIPTION;
-            initializeDescription();
-            System.out.println("To normal");
-            return;
+        try {
+            intentions = AbstractDungeon.getCurrRoom().monsters.hoveredMonster.intent;
+            if (intentions.equals(AbstractMonster.Intent.ATTACK) ||
+                    intentions.equals(AbstractMonster.Intent.ATTACK_BUFF) ||
+                    intentions.equals(AbstractMonster.Intent.ATTACK_DEBUFF) ||
+                    intentions.equals(AbstractMonster.Intent.ATTACK_DEFEND)) {
+                this.rawDescription = EXTENDED_DESCRIPTION[0];
+                initializeDescription();
+                System.out.println("bumblebee");
+            } else if (intentions.equals(AbstractMonster.Intent.BUFF) ||
+                    intentions.equals(AbstractMonster.Intent.DEFEND_BUFF) ||
+                    intentions.equals(AbstractMonster.Intent.DEBUFF) ||
+                    intentions.equals(AbstractMonster.Intent.DEFEND_DEBUFF)) {
+                this.rawDescription = EXTENDED_DESCRIPTION[1];
+                initializeDescription();
+                System.out.println("hornet");
+            } else {
+                this.rawDescription = EXTENDED_DESCRIPTION[2];
+                initializeDescription();
+                System.out.println("honeybee");
+            }
         }
-        intentions = AbstractDungeon.getCurrRoom().monsters.hoveredMonster.intent;
-        if (intentions.equals(AbstractMonster.Intent.ATTACK) ||
-                intentions.equals(AbstractMonster.Intent.ATTACK_BUFF) ||
-                intentions.equals(AbstractMonster.Intent.ATTACK_DEBUFF) ||
-                intentions.equals(AbstractMonster.Intent.ATTACK_DEFEND)){
-            this.rawDescription = EXTENDED_DESCRIPTION[0];
-            initializeDescription();
-            System.out.println("bumblebee");
+        catch (NullPointerException e){
+                this.rawDescription = DESCRIPTION;
+                initializeDescription();
+                System.out.println("To normal");
+                return;
+            }
         }
-        else if (intentions.equals(AbstractMonster.Intent.BUFF)||
-                intentions.equals(AbstractMonster.Intent.DEFEND_BUFF) ||
-                intentions.equals(AbstractMonster.Intent.DEBUFF) ||
-                intentions.equals(AbstractMonster.Intent.DEFEND_DEBUFF)){
-            this.rawDescription = EXTENDED_DESCRIPTION[1];
-            initializeDescription();
-            System.out.println("hornet");
-        }
-        else {
-            this.rawDescription = EXTENDED_DESCRIPTION[2];
-            initializeDescription();
-            System.out.println("honeybee");
-        }
-    }
 
     // Upgraded stats.
     @Override

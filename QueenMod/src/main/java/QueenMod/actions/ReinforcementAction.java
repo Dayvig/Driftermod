@@ -61,10 +61,14 @@ public class ReinforcementAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            AbstractCard c1 = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()));
+            AbstractCard c1 = upgradeMatrix.remove(AbstractDungeon.cardRandomRng.random(upgradeMatrix.size()-1));
             c1.freeToPlayOnce = true;
             c1.applyPowers();
             AbstractDungeon.player.limbo.group.add(c1);
+        if (AbstractDungeon.player.hand.group.contains(c1)){
+            AbstractDungeon.player.hand.removeCard(c1);
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
+        }
             if (c1.cardID.equals(Hornet.ID)){
                 Hornet tmp = (Hornet) c1;
                 tmp.playedBySwarm = true;

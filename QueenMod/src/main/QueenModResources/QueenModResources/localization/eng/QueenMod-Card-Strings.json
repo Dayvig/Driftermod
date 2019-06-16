@@ -171,8 +171,8 @@
     "NAME": "Cross-guard",
     "DESCRIPTION": "Gain !B! Block for each Attack in your hand. Recall your queenmod:Swarm."
   },
-  "QueenMod:EvolveWings": {
-    "NAME": "Evolve Wings",
+  "QueenMod:TakeFlight": {
+    "NAME": "Take Flight",
     "DESCRIPTION": "Gain queenmod:Flight. Lose 3 queenmod:Nectar at the end of your turn or lose queenmod:Flight."
   },
   "QueenMod:Anticipate": {
