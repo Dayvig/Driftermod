@@ -4,18 +4,12 @@ import QueenMod.QueenMod;
 import QueenMod.actions.DrawToHandAction;
 import QueenMod.actions.RecruitAction;
 import QueenMod.characters.TheQueen;
-import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import org.apache.commons.lang3.ObjectUtils;
-
-import java.util.ArrayList;
 
 import static QueenMod.QueenMod.makeCardPath;
 
@@ -76,7 +70,7 @@ public class Anticipate extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new RecruitAction(new Hornet(), 1));
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new RecruitAction(new HoneyBee(), 1));
+            AbstractDungeon.actionManager.addToBottom(new RecruitAction(new WorkerBee(), 1));
         }
     }
 

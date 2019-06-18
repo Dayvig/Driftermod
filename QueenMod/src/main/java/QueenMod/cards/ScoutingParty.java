@@ -45,7 +45,7 @@ import static QueenMod.QueenMod.makeCardPath;
         @Override
         public void use(AbstractPlayer p, AbstractMonster m) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new RecruitAction(new HoneyBee(),2));
+            AbstractDungeon.actionManager.addToBottom(new RecruitAction(new WorkerBee(),2));
         }
 
 

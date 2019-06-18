@@ -15,10 +15,10 @@
     },
   {
       "NAMES": [
-        "honeybee",
-        "honeybees"
+        "workerbee",
+        "workerbees"
       ],
-    "DESCRIPTION": "Honeybees are 0-cost skills that gain 4 Nectar."
+    "DESCRIPTION": "Worker Bees are 0-cost skills that gain 1 queenmod:Industry."
     },
   {
       "NAMES": [
@@ -107,5 +107,18 @@
     "scry"
   ],
   "DESCRIPTION": "Look at the top X cards of your deck, and choose any number to send to your discard pile."
+},
+  {
+  "NAMES": [
+    "commondebuff",
+    "commondebuffs"
+  ],
+  "DESCRIPTION": "Weak, Vulnerable and Frail are Common Debuffs."
+},
+  {
+  "NAMES": [
+    "industry"
+  ],
+  "DESCRIPTION": "At the start of your turn, gain 1 queenmod:Nectar for each Industry, also draw one additional card at the start of your turn for every 5 Industry you have."
 }
 ]

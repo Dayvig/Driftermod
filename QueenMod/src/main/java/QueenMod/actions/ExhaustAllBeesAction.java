@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import java.util.Iterator;
 
 public class ExhaustAllBeesAction extends AbstractGameAction {
     private float startingDuration;
@@ -33,11 +32,11 @@ public class ExhaustAllBeesAction extends AbstractGameAction {
                 if (c.cardID.equals(Hornet.ID) ||
                         c.cardID.equals(BumbleBee.ID) ||
                         c.cardID.equals(Drone.ID) ||
-                        c.cardID.equals(HoneyBee.ID) ||
+                        c.cardID.equals(WorkerBee.ID) ||
                         c.cardID.equals(HornetCommander.ID) ||
                         c.cardID.equals(BumbleBeeCommander.ID) ||
                         c.cardID.equals(DroneCommander.ID) ||
-                        c.cardID.equals(HoneyBeeCommander.ID)) {
+                        c.cardID.equals(WorkerBeeCommander.ID)) {
                     AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                             new SwarmPower(AbstractDungeon.player, AbstractDungeon.player, this.bee), this.bee));

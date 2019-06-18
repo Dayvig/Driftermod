@@ -63,7 +63,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             if (c.cardID.equals(BumbleBee.ID)){
                 containsBumblebee=true;
             }
-            if (c.cardID.equals(HoneyBee.ID)){
+            if (c.cardID.equals(WorkerBee.ID)){
                 containsHoneybee=true;
             }
             if (c.cardID.equals(Drone.ID)){
@@ -78,7 +78,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             if (h && b && hb && d) {
                 modalID[0] = Hornet.ID;
                 modalID[1] = BumbleBee.ID;
-                modalID[2] = HoneyBee.ID;
+                modalID[2] = WorkerBee.ID;
                 modalID[3] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -96,7 +96,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (h && b && hb) {
                 modalID[0] = Hornet.ID;
                 modalID[1] = BumbleBee.ID;
-                modalID[2] = HoneyBee.ID;
+                modalID[2] = WorkerBee.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
                         .setColor(CardColor.RED) // Sets color of any following cards to colorless
@@ -125,7 +125,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 return;
             } else if (h && hb && d) {
                 modalID[0] = Hornet.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modalID[2] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -140,7 +140,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 return;
             } else if (b && hb && d) {
                 modalID[0] = BumbleBee.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modalID[2] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -167,7 +167,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 return;
             } else if (h && hb) {
                 modalID[0] = Hornet.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
                         .setColor(CardColor.RED) // Sets color of any following cards to colorless
@@ -191,7 +191,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 return;
             } else if (b && hb) {
                 modalID[0] = BumbleBee.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
                         .setColor(CardColor.BLUE) // Sets color of any following cards to red
@@ -214,7 +214,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 modal.open();
                 return;
             } else if (hb && d) {
-                modalID[0] = HoneyBee.ID;
+                modalID[0] = WorkerBee.ID;
                 modalID[1] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -230,7 +230,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (b) {
                 AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, BumbleBee.ID, false));
             } else if (hb) {
-                AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, HoneyBee.ID, false));
+                AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, WorkerBee.ID, false));
             } else if (d) {
                 AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, Drone.ID, false));
             }
@@ -240,7 +240,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 seriousUpgrade = true;
                 modalID[0] = Hornet.ID;
                 modalID[1] = BumbleBee.ID;
-                modalID[2] = HoneyBee.ID;
+                modalID[2] = WorkerBee.ID;
                 modalID[3] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -259,7 +259,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 seriousUpgrade = true;
                 modalID[0] = Hornet.ID;
                 modalID[1] = BumbleBee.ID;
-                modalID[2] = HoneyBee.ID;
+                modalID[2] = WorkerBee.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
                         .setColor(CardColor.RED) // Sets color of any following cards to colorless
@@ -290,7 +290,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (h && hb && d) {
                 seriousUpgrade = true;
                 modalID[0] = Hornet.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modalID[2] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -306,7 +306,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (b && hb && d) {
                 seriousUpgrade = true;
                 modalID[0] = BumbleBee.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modalID[2] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -335,7 +335,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (h && hb) {
                 seriousUpgrade = true;
                 modalID[0] = Hornet.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
                         .setColor(CardColor.RED) // Sets color of any following cards to colorless
@@ -361,7 +361,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (b && hb) {
                 seriousUpgrade = true;
                 modalID[0] = BumbleBee.ID;
-                modalID[1] = HoneyBee.ID;
+                modalID[1] = WorkerBee.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
                         .setColor(CardColor.BLUE) // Sets color of any following cards to red
@@ -386,7 +386,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 return;
             } else if (hb && d) {
                 seriousUpgrade = true;
-                modalID[0] = HoneyBee.ID;
+                modalID[0] = WorkerBee.ID;
                 modalID[1] = Drone.ID;
                 modal = new ModalChoiceBuilder()
                         .setCallback(this) // Sets callback of all the below options to this
@@ -402,7 +402,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             } else if (b) {
                 AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, BumbleBee.ID, true));
             } else if (hb) {
-                AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, HoneyBee.ID, true));
+                AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, WorkerBee.ID, true));
             } else if (d) {
                 AbstractDungeon.actionManager.addToBottom(new PromotionAction(AbstractDungeon.player, Drone.ID, true));
             }
@@ -441,7 +441,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
             if (c.cardID.equals(Hornet.ID) ||
                     c.cardID.equals(BumbleBee.ID) ||
                     c.cardID.equals(Drone.ID) ||
-                    c.cardID.equals(HoneyBee.ID)){
+                    c.cardID.equals(WorkerBee.ID)){
                 return true;
             }
         }
@@ -461,7 +461,7 @@ public class Promotion extends AbstractDynamicCard implements ModalChoice.Callba
                 if (c.cardID.equals(BumbleBee.ID)) {
                     containsBumblebee = true;
                 }
-                if (c.cardID.equals(HoneyBee.ID)) {
+                if (c.cardID.equals(WorkerBee.ID)) {
                     containsHoneybee = true;
                 }
                 if (c.cardID.equals(Drone.ID)) {

@@ -338,6 +338,9 @@ public class QueenMod implements
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of e0ach type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
+        BaseMod.addCard(new Industrialization());
+        BaseMod.addCard(new PlanOfAction());
+        BaseMod.addCard(new TeaTime());
         BaseMod.addCard(new CallToArms());
         BaseMod.addCard(new WASP());
         BaseMod.addCard(new SecretService());
@@ -356,7 +359,7 @@ public class QueenMod implements
         BaseMod.addCard(new SwarmEconomics());
         BaseMod.addCard(new HoneyFactory());
         BaseMod.addCard(new RoyalGuards());
-        BaseMod.addCard(new Gardening());
+        BaseMod.addCard(new SpaDay());
         BaseMod.addCard(new WarTrumpet());
         BaseMod.addCard(new Regroup());
         BaseMod.addCard(new Reinforcements());
@@ -377,7 +380,7 @@ public class QueenMod implements
         BaseMod.addCard(new Knighting());
         BaseMod.addCard(new HornetCommander());
         BaseMod.addCard(new BumbleBeeCommander());
-        BaseMod.addCard(new HoneyBeeCommander());
+        BaseMod.addCard(new WorkerBeeCommander());
         BaseMod.addCard(new DroneCommander());
         BaseMod.addCard(new Promotion());
         BaseMod.addCard(new InspiringStrike());
@@ -413,8 +416,8 @@ public class QueenMod implements
         BaseMod.addCard(new HiveNetwork());
         BaseMod.addCard(new KillerQueen());
         BaseMod.addCard(new Assimilate());
-        BaseMod.addCard(new HoneyBee());
-        BaseMod.addCard(new GatherOrder());
+        BaseMod.addCard(new WorkerBee());
+        BaseMod.addCard(new BuildOrder());
         BaseMod.addCard(new Drone());
         BaseMod.addCard(new Populate());
         BaseMod.addCard(new HoneycombSmash());
@@ -432,8 +435,9 @@ public class QueenMod implements
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
-
-        UnlockTracker.unlockCard(WASP.ID);
+        UnlockTracker.unlockCard(PlanOfAction.ID);
+        UnlockTracker.unlockCard(Industrialization.ID);
+        UnlockTracker.unlockCard(TeaTime.ID);
         UnlockTracker.unlockCard(SecretService.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(Recruit.ID);
@@ -450,7 +454,7 @@ public class QueenMod implements
         UnlockTracker.unlockCard(SwarmEconomics.ID);
         UnlockTracker.unlockCard(HoneyFactory.ID);
         UnlockTracker.unlockCard(RoyalGuards.ID);
-        UnlockTracker.unlockCard(Gardening.ID);
+        UnlockTracker.unlockCard(SpaDay.ID);
         UnlockTracker.unlockCard(WarTrumpet.ID);
         UnlockTracker.unlockCard(Regroup.ID);
         UnlockTracker.unlockCard(Reinforcements.ID);
@@ -484,7 +488,7 @@ public class QueenMod implements
         UnlockTracker.unlockCard(InspiringStrike.ID);
         UnlockTracker.unlockCard(Promotion.ID);
         UnlockTracker.unlockCard(DroneCommander.ID);
-        UnlockTracker.unlockCard(HoneyBeeCommander.ID);
+        UnlockTracker.unlockCard(WorkerBeeCommander.ID);
         UnlockTracker.unlockCard(BumbleBeeCommander.ID);
         UnlockTracker.unlockCard(HornetCommander.ID);
         UnlockTracker.unlockCard(Knighting.ID);
@@ -498,8 +502,8 @@ public class QueenMod implements
         UnlockTracker.unlockCard(PlanAhead.ID);
         UnlockTracker.unlockCard(Populate.ID);
         UnlockTracker.unlockCard(Drone.ID);
-        UnlockTracker.unlockCard(GatherOrder.ID);
-        UnlockTracker.unlockCard(HoneyBee.ID);
+        UnlockTracker.unlockCard(BuildOrder.ID);
+        UnlockTracker.unlockCard(WorkerBee.ID);
         UnlockTracker.unlockCard(Assimilate.ID);
         UnlockTracker.unlockCard(KillerQueen.ID);
         UnlockTracker.unlockCard(HiveNetwork.ID);

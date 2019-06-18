@@ -3,6 +3,7 @@ package QueenMod.cards;
 import QueenMod.QueenMod;
 import QueenMod.characters.TheQueen;
 import QueenMod.powers.HoneyPower;
+import QueenMod.powers.IndustryPower;
 import QueenMod.powers.Nectar;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -13,8 +14,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static QueenMod.QueenMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class HoneyBee extends AbstractDynamicCard {
-    public static final String ID = QueenMod.makeID(HoneyBee.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+public class WorkerBee extends AbstractDynamicCard {
+    public static final String ID = QueenMod.makeID(WorkerBee.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -35,9 +36,9 @@ public class HoneyBee extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public HoneyBee() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public WorkerBee() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 4;
+        this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }
 
@@ -45,10 +46,7 @@ public class HoneyBee extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Nectar(p, p, magicNumber), magicNumber));
-        if (p.hasPower(HoneyPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(p.getPower(HoneyPower.POWER_ID).amount));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IndustryPower(p, p, magicNumber), magicNumber));
     }
 
 
@@ -57,7 +55,7 @@ public class HoneyBee extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
             initializeDescription();
         }
     }

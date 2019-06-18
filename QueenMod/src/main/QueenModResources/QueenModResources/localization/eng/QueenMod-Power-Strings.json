@@ -214,5 +214,13 @@
                         "",
                         ""
                 ]
+        },
+        "QueenMod:IndustryPower": {
+                "NAME": "Industry",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b Nectar. For every 5 Industry, also draw a card.",
+                        "",
+                        ""
+                ]
         }
 }

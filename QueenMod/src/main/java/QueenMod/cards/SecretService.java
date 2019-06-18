@@ -2,10 +2,7 @@ package QueenMod.cards;
 
 import QueenMod.QueenMod;
 import QueenMod.actions.LoadCardImageAction;
-import QueenMod.actions.MakeTempCardInDrawPileActionFast;
-import QueenMod.actions.RecruitAction;
 import QueenMod.characters.TheQueen;
-import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -147,20 +144,20 @@ public class SecretService extends AbstractDynamicCard {
                     }
                     bumblebeeMatrix.add(c);
                 }
-                if (c.cardID.equals(HoneyBee.ID) && containsHoneybee < 3) {
+                if (c.cardID.equals(WorkerBee.ID) && containsHoneybee < 3) {
                     containsHoneybee = 1;
                     if (c.upgraded) {
                         containsHoneybee = 2;
                     }
                     honeybeeMatrix.add(c);
                 }
-                if (c.cardID.equals(HoneyBeeCommander.ID)) {
+                if (c.cardID.equals(WorkerBeeCommander.ID)) {
                     containsHoneybee = 3;
                     if (c.upgraded) {
                         containsHoneybee = 4;
                     }
                     for (AbstractCard d : honeybeeMatrix) {
-                        if (d.cardID.equals(HoneyBee.ID)) {
+                        if (d.cardID.equals(WorkerBee.ID)) {
                             honeybeeMatrix.remove(d);
                         }
                     }

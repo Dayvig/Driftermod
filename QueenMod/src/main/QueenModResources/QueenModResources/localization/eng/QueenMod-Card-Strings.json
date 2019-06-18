@@ -58,14 +58,14 @@
     "NAME": "Assimilate",
     "DESCRIPTION": "Exhaust all queenmod:Hive cards in your hand. Gain !M! queenmod:Swarm for each. Recall your queenmod:Swarm."
   },
-  "QueenMod:HoneyBee": {
-    "NAME": "Honey Bee",
-    "DESCRIPTION": "Gain !M! queenmod:Nectar."
+  "QueenMod:WorkerBee": {
+    "NAME": "Worker Bee",
+    "DESCRIPTION": "Gain !M! queenmod:Industry."
   },
-  "QueenMod:GatherOrder": {
-    "NAME": "Gather Order",
-    "DESCRIPTION": "Gain !QueenMod:M2! queenmod:Nectar. Recruit a queenmod:Honeybee.",
-    "UPGRADE_DESCRIPTION": "Gain !QueenMod:M2! queenmod:Nectar. Recruit !M! queenmod:Honeybees."
+  "QueenMod:BuildOrder": {
+    "NAME": "Build Order",
+    "DESCRIPTION": "Gain !QueenMod:M2! queenmod:Industry. Recruit a queenmod:Workerbee.",
+    "UPGRADE_DESCRIPTION": "Gain !QueenMod:M2! queenmod:Industry. Recruit !M! queenmod:Workerbees."
   },
   "QueenMod:KillerQueen": {
     "NAME": "Killer Queen",
@@ -87,7 +87,7 @@
   },
   "QueenMod:Metamorphosis": {
     "NAME": "Metamorphosis",
-    "DESCRIPTION": "Replace all queenmod:Drones with queenmod:Hornets, queenmod:Bumblebees, or queenmod:Honeybees."
+    "DESCRIPTION": "Replace all queenmod:Drones with queenmod:Hornets, queenmod:Bumblebees, or queenmod:Workerbees."
   },
   "QueenMod:Nourish": {
     "NAME": "Nourish",
@@ -117,7 +117,7 @@
   },
   "QueenMod:EnergyBees": {
     "NAME": "Energy Gatherers",
-    "DESCRIPTION": "Gain [E] when you play a queenmod:Honeybee. queenmod:Recruit 2 queenmod:Honeybees."
+    "DESCRIPTION": "Gain [E] at the start of your turn for every 5 queenmod:Industry. queenmod:Recruit 2 queenmod:Workerbees."
   },
   "QueenMod:PheremoneSwap": {
     "NAME": "Pheremone Swap",
@@ -181,13 +181,13 @@
     "EXTENDED_DESCRIPTION": [
       "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Bumblebee to your hand.",
       "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Hornet to your hand.",
-      "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Honeybee to your hand.",
+      "Add a queenmod:Drone from your draw pile to your hand. Add a queenmod:Workerbee to your hand.",
       "Gain !B! block. Add a Drone to your hand."
     ]
   },
   "QueenMod:ScoutingParty": {
     "NAME": "Scouting Party",
-    "DESCRIPTION": "Draw !M! cards. queenmod:Recruit 2 queenmod:Honeybees."
+    "DESCRIPTION": "Draw !M! cards. queenmod:Recruit 2 queenmod:Workerbees."
   },
   "QueenMod:MilitaryHandbook": {
     "NAME": "Military Handbook",
@@ -195,8 +195,7 @@
   },
   "QueenMod:PollenBlast": {
     "NAME": "Pollen Blast",
-    "DESCRIPTION": "Deal !D! damage. Inflict !M! queenmod:Pollinate.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and inflict !M! queenmod:Pollinate to all enemies."
+    "DESCRIPTION": "Deal !D! damage and inflict !M! queenmod:Pollinate to all enemies."
   },
   "QueenMod:BlindingSwarm": {
     "NAME": "Blinding Swarm",
@@ -232,10 +231,10 @@
     "DESCRIPTION": "Upgrade all queenmod:Drones in your draw pile. Draw a card.",
     "UPGRADE_DESCRIPTION": "Upgrade all queenmod:Drones in your draw pile. Draw 2 cards."
   },
-  "QueenMod:HoneyBeeCommander": {
-    "NAME": "Honeybee Commander",
-    "DESCRIPTION": "Gain !M! queenmod:Nectar. Apply 1 queenmod:Pollinate.",
-    "UPGRADE_DESCRIPTION": "Gain !M! queenmod:Nectar. Apply 2 queenmod:Pollinate."
+  "QueenMod:WorkerBeeCommander": {
+    "NAME": "Worker Bee Commander",
+    "DESCRIPTION": "Gain !M! queenmod:Industry. Apply 1 queenmod:Pollinate.",
+    "UPGRADE_DESCRIPTION": "Gain !M! queenmod:Industry. Apply 1 queenmod:Pollinate."
   },
   "QueenMod:Promotion": {
     "NAME": "Promotion",
@@ -319,10 +318,10 @@
     "DESCRIPTION": "Add a queenmod:Drone to your deck for each Attack played this turn.",
     "UPGRADE_DESCRIPTION": "Add a queenmod:Drone+ to your deck for each Attack played this turn."
   },
-  "QueenMod:Gardening":{
-    "NAME": "Gardening",
-    "DESCRIPTION": "Remove all Weak from yourself and gain double that amount as Nectar. queenmod:Recruit a queenmod:Honeybee.",
-    "UPGRADE_DESCRIPTION": "Remove all Weak and Vulnerable from yourself and gain double that amount as Nectar. queenmod:Recruit a queenmod:Honeybee."
+  "QueenMod:SpaDay": {
+    "NAME": "Spa Day",
+    "DESCRIPTION": "Remove all queenmod:CommonDebuffs and gain double the amount removed as queenmod:Nectar ( !queenmod:M2! ). NL queenmod:Recruit a queenmod:Workerbee.",
+    "UPGRADE_DESCRIPTION": "Remove all queenmod:CommonDebuffs and gain double the amount removed as queenmod:Nectar ( !queenmod:M2! ). NL queenmod:Recruit a queenmod:Workerbee."
   },
   "QueenMod:RoyalGuards":{
     "NAME": "Royal Guards",
@@ -331,7 +330,7 @@
   },
   "QueenMod:HoneyFactory":{
     "NAME": "Honey Factory",
-    "DESCRIPTION": "Unplayable. When drawn, gain !M! queenmod:Nectar and draw a card.",
+    "DESCRIPTION": "Unplayable. When drawn, discard to gain !M! queenmod:Nectar and draw a card.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this."
     ]
@@ -426,5 +425,13 @@
     "NAME": "Call to Arms",
     "DESCRIPTION": "Fill your hand with queenmod:Drones from your draw pile. Exhaust.",
     "UPGRADE_DESCRIPTION": "Fill your hand with queenmod:Drones from your draw pile."
+  },
+  "QueenMod:TeaTime": {
+    "NAME": "Tea Time",
+    "DESCRIPTION": "Gain !B! Block and !M! Nectar. Costs 1 more for each Attack in your hand."
+  },
+  "QueenMod:PlanOfAction": {
+    "NAME": "Plan of Action",
+    "DESCRIPTION": "Innate. Choose to gain Strength, Dexterity, Industry or a mixture of all three. Exhaust."
   }
 }

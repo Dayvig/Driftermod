@@ -35,12 +35,12 @@ public class PromotionAction extends AbstractGameAction {
                 promoted.upgrade();
             }
         }
-        else if (id.equals(HoneyBee.ID)) {
+        else if (id.equals(WorkerBee.ID)) {
             if (!isupgr) {
-                promoted = new HoneyBeeCommander();
+                promoted = new WorkerBeeCommander();
             }
             else {
-                promoted = new HoneyBeeCommander();
+                promoted = new WorkerBeeCommander();
                 promoted.upgrade();
             }
         }

@@ -53,7 +53,7 @@ public class EnergyBees extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new HoneyPower(p,p,1),1));
-        AbstractDungeon.actionManager.addToBottom(new RecruitAction(new HoneyBee(),2));
+        AbstractDungeon.actionManager.addToBottom(new RecruitAction(new WorkerBee(),2));
     }
 
     //Upgraded stats.
