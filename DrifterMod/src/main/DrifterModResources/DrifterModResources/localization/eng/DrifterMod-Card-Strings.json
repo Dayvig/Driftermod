@@ -14,5 +14,17 @@
   "DrifterMod:KeepItSteady": {
     "NAME": "Keep it Steady",
     "DESCRIPTION": "If you're Drifting, Drift !M!"
+  },
+  "DrifterMod:Accelerate": {
+    "NAME": "Accelerate",
+    "DESCRIPTION": "Draw and Retain !M! cards."
+  },
+  "DrifterMod:Brake": {
+    "NAME": "Brake",
+    "DESCRIPTION": "Discard your hand. Deal !D! damage and gain 1 Draw-down next turn for each card discarded. NL (Deals !M! damage.)"
+  },
+  "DrifterMod:HairPin": {
+    "NAME": "Hairpin Turn",
+    "DESCRIPTION": "If you have no Drift, deal !D! damage and Drift !M!"
   }
 }

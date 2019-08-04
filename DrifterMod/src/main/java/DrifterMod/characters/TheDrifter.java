@@ -1,10 +1,7 @@
 package DrifterMod.characters;
 
 import DrifterMod.DrifterMod;
-import DrifterMod.cards.FortyFive;
-import DrifterMod.cards.KeepItSteady;
-import DrifterMod.cards.Sixty;
-import DrifterMod.cards.Twenty;
+import DrifterMod.cards.*;
 import DrifterMod.relics.DefaultClickableRelic;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -162,15 +159,19 @@ public class TheDrifter extends CustomPlayer {
         retVal.add(Twenty.ID);
         retVal.add(Sixty.ID);
         retVal.add(FortyFive.ID);
-        retVal.add(KeepItSteady.ID);
+        retVal.add(Accelerate.ID);
         retVal.add(Twenty.ID);
         retVal.add(Sixty.ID);
         retVal.add(FortyFive.ID);
-        retVal.add(KeepItSteady.ID);
+        retVal.add(Accelerate.ID);
         retVal.add(Twenty.ID);
         retVal.add(Sixty.ID);
         retVal.add(FortyFive.ID);
-        retVal.add(KeepItSteady.ID);
+        retVal.add(Accelerate.ID);
+        retVal.add(Brake.ID);
+        retVal.add(Brake.ID);
+        retVal.add(HairPin.ID);
+        retVal.add(HairPin.ID);
 
         return retVal;
     }

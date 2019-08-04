@@ -15,7 +15,7 @@
                         ""
                 ]
         },
-        "DrifterMod:Drifting": {
+        "DrifterMod:DriftingPower": {
                 "NAME": "Drifting...",
                 "DESCRIPTIONS": [
                         "Maintains your drift. If you don't have this, lose all your Drift at the end of the turn.",
@@ -23,10 +23,18 @@
                         ""
                 ]
         },
-        "DrifterMod:Drift": {
+        "DrifterMod:DriftPower": {
                 "NAME": "Drift",
                 "DESCRIPTIONS": [
                         "Gain #b block and deal #b damage to all enemies at the end of the turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TempRetainPower": {
+                "NAME": "Retain",
+                "DESCRIPTIONS": [
+                        "Keep #b cards in your hand this turn only.",
                         "",
                         ""
                 ]

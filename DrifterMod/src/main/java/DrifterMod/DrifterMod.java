@@ -1,9 +1,6 @@
 package DrifterMod;
 
-import DrifterMod.cards.FortyFive;
-import DrifterMod.cards.KeepItSteady;
-import DrifterMod.cards.Sixty;
-import DrifterMod.cards.Twenty;
+import DrifterMod.cards.*;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.events.IdentityCrisisEvent;
 import DrifterMod.potions.PlaceholderPotion;
@@ -17,6 +14,7 @@ import DrifterMod.variables.DefaultSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -343,11 +341,21 @@ public class DrifterMod implements
         BaseMod.addCard(new FortyFive());
         BaseMod.addCard(new Sixty());
         BaseMod.addCard(new KeepItSteady());
+        BaseMod.addCard(new Accelerate());
+        BaseMod.addCard(new Brake());
+        BaseMod.addCard(new HairPin());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
+
+        UnlockTracker.unlockCard(Twenty.ID);
+        UnlockTracker.unlockCard(FortyFive.ID);
+        UnlockTracker.unlockCard(Sixty.ID);
+        UnlockTracker.unlockCard(KeepItSteady.ID);
+        UnlockTracker.unlockCard(Accelerate.ID);
+        UnlockTracker.unlockCard(Brake.ID);
 
 
 

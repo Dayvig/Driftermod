@@ -6,7 +6,6 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -21,7 +20,7 @@ public class DexDownPower extends AbstractPower implements CloneablePowerInterfa
 
     public AbstractCreature source;
 
-    public static final String POWER_ID = DrifterMod.makeID("DexDownPower");
+    public static final String POWER_ID = DrifterMod.makeID("DrawDownPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -70,6 +69,6 @@ public class DexDownPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public AbstractPower makeCopy() {
-        return new DexDownPower(owner, source, amount);
+        return new DrawDownPower(owner, source, amount);
     }
 }
