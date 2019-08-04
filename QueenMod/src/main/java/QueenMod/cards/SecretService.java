@@ -306,6 +306,7 @@ public class SecretService extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
+            this.exhaust = false;
             initializeDescription();
         }
     }

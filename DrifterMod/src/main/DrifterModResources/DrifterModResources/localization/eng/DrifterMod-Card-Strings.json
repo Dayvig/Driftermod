@@ -1,0 +1,18 @@
+{
+  "DrifterMod:Twenty": {
+    "NAME": "20 Degree Turn",
+    "DESCRIPTION": "Gain !B! Block. NL Drift 1"
+  },
+  "DrifterMod:Sixty": {
+  "NAME": "60 Degree Turn",
+  "DESCRIPTION": "Gain !B! Block. NL Drift !M! NL Next turn, gain !M! Dexterity for one turn."
+},
+  "DrifterMod:FortyFive": {
+    "NAME": "45 Degree Turn",
+    "DESCRIPTION": "Deal !D! damage. NL Drift 1"
+  },
+  "DrifterMod:KeepItSteady": {
+    "NAME": "Keep it Steady",
+    "DESCRIPTION": "If you're Drifting, Drift !M!"
+  }
+}

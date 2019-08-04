@@ -1,0 +1,34 @@
+{
+        "DrifterMod:DexDownPower": {
+                "NAME": "Dex Down",
+                "DESCRIPTIONS": [
+                        "Lose #b Dexterity at the end of the turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DexterityNextTurnPower": {
+                "NAME": "Dex Next Turn",
+                "DESCRIPTIONS": [
+                        "Gain #b Dexterity next turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:Drifting": {
+                "NAME": "Drifting...",
+                "DESCRIPTIONS": [
+                        "Maintains your drift. If you don't have this, lose all your Drift at the end of the turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:Drift": {
+                "NAME": "Drift",
+                "DESCRIPTIONS": [
+                        "Gain #b block and deal #b damage to all enemies at the end of the turn.",
+                        "",
+                        ""
+                ]
+        }
+}
