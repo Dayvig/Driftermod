@@ -67,8 +67,8 @@ public class Brake extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new DiscardSpecificCardAction(c));
             i++;
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage*i, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawDownPower(p, p, i)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage*(i-1), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawDownPower(p, p, (i-1))));
     }
 
 

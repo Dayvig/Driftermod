@@ -14,7 +14,6 @@ import DrifterMod.variables.DefaultSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
-import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -337,25 +336,48 @@ public class DrifterMod implements
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of e0ach type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
-        BaseMod.addCard(new Twenty());
+        BaseMod.addCard(new Tmph());
         BaseMod.addCard(new FortyFive());
         BaseMod.addCard(new Sixty());
         BaseMod.addCard(new KeepItSteady());
         BaseMod.addCard(new Accelerate());
         BaseMod.addCard(new Brake());
         BaseMod.addCard(new HairPin());
+        BaseMod.addCard(new SpinOut());
+        BaseMod.addCard(new Ninety());
+        BaseMod.addCard(new Fender());
+        BaseMod.addCard(new BigCrash());
+        BaseMod.addCard(new EngineRev());
+        BaseMod.addCard(new Coast());
+        BaseMod.addCard(new HardPass());
+        BaseMod.addCard(new Tmph());
+        BaseMod.addCard(new InertialDrift());
+        BaseMod.addCard(new DefensiveDriving());
+        BaseMod.addCard(new CornerHug());
+
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
-        UnlockTracker.unlockCard(Twenty.ID);
+        UnlockTracker.unlockCard(Tmph.ID);
         UnlockTracker.unlockCard(FortyFive.ID);
         UnlockTracker.unlockCard(Sixty.ID);
         UnlockTracker.unlockCard(KeepItSteady.ID);
         UnlockTracker.unlockCard(Accelerate.ID);
         UnlockTracker.unlockCard(Brake.ID);
+        UnlockTracker.unlockCard(SpinOut.ID);
+        UnlockTracker.unlockCard(Ninety.ID);
+        UnlockTracker.unlockCard(Fender.ID);
+        UnlockTracker.unlockCard(BigCrash.ID);
+        UnlockTracker.unlockCard(EngineRev.ID);
+        UnlockTracker.unlockCard(Coast.ID);
+        UnlockTracker.unlockCard(HardPass.ID);
+        UnlockTracker.unlockCard(Tmph.ID);
+        UnlockTracker.unlockCard(InertialDrift.ID);
+        UnlockTracker.unlockCard(DefensiveDriving.ID);
+        UnlockTracker.unlockCard(CornerHug.ID);
 
 
 

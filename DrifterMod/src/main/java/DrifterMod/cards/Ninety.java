@@ -2,7 +2,11 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.powers.DriftPower;
+import DrifterMod.powers.DriftStrengthDownPower;
+import DrifterMod.powers.DriftingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,15 +14,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class Blitz extends AbstractDynamicCard {
+public class Ninety extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DrifterMod.makeID(Blitz.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = DrifterMod.makeID(Ninety.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -34,51 +39,32 @@ public class Blitz extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
-    private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int COST = 2;  // COST = ${COST}
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_DAMAGE = 5;
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_MAGIC = 1;
 
-    private static final int DAMAGE = 6;    // DAMAGE = ${DAMAGE}
-    private static final int MAGIC = 1;
-    public int cardCounter;
-    public int damageAtStartOfTurn;
     // /STAT DECLARATION/
 
 
-    public Blitz() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public Ninety() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
-        cardCounter = 0;
-        damageAtStartOfTurn = baseDamage;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i=0;i<magicNumber;i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftStrengthDownPower(p, p, magicNumber), magicNumber));
+        if (!p.hasPower(DriftingPower.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
-        damageAtStartOfTurn = baseDamage;
-        this.initializeDescription();
-    }
-
-    public void applyPowers(){
-        super.applyPowers();
-        if (cardCounter > AbstractDungeon.player.cardsPlayedThisTurn){cardCounter = 0;}
-        if (cardCounter < AbstractDungeon.player.cardsPlayedThisTurn) {
-            baseDamage++;
-            cardCounter++;
-            initializeDescription();
-        }
-    }
-
-    public void triggerWhenDrawn(){
-        damageAtStartOfTurn = this.baseDamage;
-    }
-
-    public void onMoveToDiscard(){
-        baseDamage = damageAtStartOfTurn;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,1), 1));
     }
 
     // Upgraded stats.
@@ -86,7 +72,8 @@ public class Blitz extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(1);
+            upgradeDamage(UPGRADE_DAMAGE);
+            this.upgradeMagicNumber(UPGRADE_MAGIC);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

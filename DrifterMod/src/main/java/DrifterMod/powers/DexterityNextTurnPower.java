@@ -54,7 +54,7 @@ public class DexterityNextTurnPower extends AbstractPower implements CloneablePo
     @Override
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount), this.amount));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DrawDownPower(this.owner, this.owner, this.amount), this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexDownPower(this.owner, this.owner, this.amount), this.amount));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
@@ -70,6 +70,6 @@ public class DexterityNextTurnPower extends AbstractPower implements CloneablePo
 
     @Override
     public AbstractPower makeCopy() {
-        return new DrawDownPower(owner, source, amount);
+        return new DexterityNextTurnPower(owner, source, amount);
     }
 }

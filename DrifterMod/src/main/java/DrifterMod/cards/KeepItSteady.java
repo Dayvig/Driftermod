@@ -57,6 +57,7 @@ public class KeepItSteady extends AbstractDynamicCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
+        cantUseMessage = "I need to drift!";
         return p.hasPower(DriftPower.POWER_ID);
     }
 

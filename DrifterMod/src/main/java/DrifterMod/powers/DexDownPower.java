@@ -20,7 +20,7 @@ public class DexDownPower extends AbstractPower implements CloneablePowerInterfa
 
     public AbstractCreature source;
 
-    public static final String POWER_ID = DrifterMod.makeID("DrawDownPower");
+    public static final String POWER_ID = DrifterMod.makeID("DexDownPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -69,6 +69,6 @@ public class DexDownPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public AbstractPower makeCopy() {
-        return new DrawDownPower(owner, source, amount);
+        return new DexDownPower(owner, source, amount);
     }
 }

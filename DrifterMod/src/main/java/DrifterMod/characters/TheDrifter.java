@@ -156,22 +156,27 @@ public class TheDrifter extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         logger.info("Begin loading starter Deck Strings");
-        retVal.add(Twenty.ID);
         retVal.add(Sixty.ID);
         retVal.add(FortyFive.ID);
         retVal.add(Accelerate.ID);
-        retVal.add(Twenty.ID);
-        retVal.add(Sixty.ID);
-        retVal.add(FortyFive.ID);
-        retVal.add(Accelerate.ID);
-        retVal.add(Twenty.ID);
         retVal.add(Sixty.ID);
         retVal.add(FortyFive.ID);
         retVal.add(Accelerate.ID);
         retVal.add(Brake.ID);
         retVal.add(Brake.ID);
-        retVal.add(HairPin.ID);
-        retVal.add(HairPin.ID);
+        retVal.add(EngineRev.ID);
+        retVal.add(Coast.ID);
+        retVal.add(Coast.ID);
+        retVal.add(HardPass.ID);
+        retVal.add(HardPass.ID);
+        retVal.add(Tmph.ID);
+        retVal.add(Tmph.ID);
+        retVal.add(InertialDrift.ID);
+        retVal.add(InertialDrift.ID);
+        retVal.add(DefensiveDriving.ID);
+        retVal.add(DefensiveDriving.ID);
+        retVal.add(CornerHug.ID);
+        retVal.add(CornerHug.ID);
 
         return retVal;
     }
@@ -232,7 +237,7 @@ public class TheDrifter extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Twenty();
+        return new Tmph();
     }
 
     // The class name as it appears next to your player name in-game

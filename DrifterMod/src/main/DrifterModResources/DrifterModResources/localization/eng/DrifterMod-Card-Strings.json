@@ -26,5 +26,49 @@
   "DrifterMod:HairPin": {
     "NAME": "Hairpin Turn",
     "DESCRIPTION": "If you have no Drift, deal !D! damage and Drift !M!"
+  },
+  "DrifterMod:SpinOut": {
+    "NAME": "Spin Out",
+    "DESCRIPTION": "Gain !M! Thorns for each Drift for one turn. NL Lose your Drift. NL Gain 1 Draw-down next turn for each Drift."
+  },
+  "DrifterMod:Ninety": {
+    "NAME": "90 Degree Turn",
+    "DESCRIPTION": "Deal !D! damage. NL Drift !M! NL Gain !M! Strength while Drifting."
+  },
+  "DrifterMod:Fender": {
+    "NAME": "Fender",
+    "DESCRIPTION": "Deal !D! damage. NL Gain 2 Draw-down."
+  },
+  "DrifterMod:BigCrash": {
+    "NAME": "Hyper Crash",
+    "DESCRIPTION": "Deal !D! damage (Equal to Max HP/20 * Cards in hand) NL Lose your Drift and do not draw next turn."
+  },
+  "DrifterMod:EngineRev": {
+    "NAME": "Engine Rev",
+    "DESCRIPTION": "Innate NL Overdraw !M! cards and gain !M! [E] next turn. NL Exhaust."
+  },
+  "DrifterMod:Coast": {
+    "NAME": "Coast",
+    "DESCRIPTION": "Gain !B! Block. NL Retain !M! cards this turn."
+  },
+  "DrifterMod:HardPass": {
+    "NAME": "Hard Pass",
+    "DESCRIPTION": "Deal !D! damage. NL Overdraw !M! next turn."
+  },
+  "DrifterMod:Tmph": {
+    "NAME": "Speed-up",
+    "DESCRIPTION": "Discard !M! cards to deal !D! damage to all enemies. NL Ethereal"
+  },
+  "DrifterMod:InertialDrift": {
+    "NAME": "Inertial Drift",
+    "DESCRIPTION": "Gain block and deal damage to all enemies equal to your Drift. NL Double your Drift. NL Exhaust"
+  },
+  "DrifterMod:DefensiveDriving": {
+    "NAME": "Defensive Driving",
+    "DESCRIPTION": "Discard 4 cards to gain !B! Block."
+  },
+  "DrifterMod:CornerHug": {
+    "NAME": "Hard Corner",
+    "DESCRIPTION": "Discard 3 cards to Drift !M!"
   }
 }

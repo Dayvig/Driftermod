@@ -7,7 +7,6 @@ import DrifterMod.powers.DriftingPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.AnimatedNpc;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -20,7 +19,7 @@ public class Twenty extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DrifterMod.makeID(Twenty.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = DrifterMod.makeID(Tmph.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 

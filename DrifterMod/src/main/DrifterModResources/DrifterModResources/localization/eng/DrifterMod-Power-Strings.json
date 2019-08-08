@@ -38,5 +38,37 @@
                         "",
                         ""
                 ]
+        },
+        "DrifterMod:ThornsDownPower": {
+                "NAME": "Thorns Down",
+                "DESCRIPTIONS": [
+                        "Lose #b Thorns at the start of your turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftStrengthDownPower": {
+                "NAME": "Drifting Strength",
+                "DESCRIPTIONS": [
+                        "Lose #b Strength if you lose your Drift.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TempMaxHandSizeInc": {
+                "NAME": "Temp Max Hand Size",
+                "DESCRIPTIONS": [
+                        "Increase your Max Hand size by #b until next turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:OverdrawNextTurn": {
+                "NAME": "Overdraw",
+                "DESCRIPTIONS": [
+                        "Next turn, draw 2. If your hand is full, draw when it empties.",
+                        "",
+                        ""
+                ]
         }
 }
