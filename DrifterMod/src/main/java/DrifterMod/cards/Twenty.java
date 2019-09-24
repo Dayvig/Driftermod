@@ -19,7 +19,7 @@ public class Twenty extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DrifterMod.makeID(Tmph.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = DrifterMod.makeID(Twenty.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -39,6 +39,8 @@ public class Twenty extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int BLOCK = 6;
     private static final int UPGRADE_BLOCK = 3;
+    public static final int UPGRADE_MAGIC = 1;
+    private static final int MAGIC = 1;
 
     public AbstractMonster hoverTarget = null;
     public AbstractMonster.Intent intentions;
@@ -48,6 +50,7 @@ public class Twenty extends AbstractDynamicCard {
     public Twenty() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = block = BLOCK;
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
 
@@ -58,7 +61,7 @@ public class Twenty extends AbstractDynamicCard {
         if (!p.hasPower(DriftingPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
     }
 
 

@@ -1,12 +1,15 @@
 package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.actions.EurobeatAction;
+import DrifterMod.characters.TheDrifter;
 import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.audio.MusicMaster;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,6 +38,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    public int onlyOnce;
 
     public DriftPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -46,6 +50,23 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
 
         type = PowerType.BUFF;
 
+        // We load those txtures here.
+        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.loadRegion("flex");
+
+        updateDescription();
+    }
+
+    public DriftPower(final AbstractCreature owner, final AbstractCreature source, final int amount, int k) {
+        name = NAME;
+        ID = POWER_ID;
+        this.owner = owner;
+        this.amount = amount;
+        this.source = source;
+
+        type = PowerType.BUFF;
+        onlyOnce = k;
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -76,11 +97,33 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     }
 
     @Override
+    public void onInitialApplication() {
+        switch (TheDrifter.r){
+            case 0:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Gas"));
+                return;
+            case 1:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("NightFire"));
+                return;
+            case 2:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Dejavu"));
+                return;
+            default:
+        }
+    }
+
+    @Override
     public void onRemove(){
         if (this.owner.hasPower(DriftStrengthDownPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.owner.getPower(DriftStrengthDownPower.POWER_ID).amount), -this.owner.getPower(DriftStrengthDownPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DriftStrengthDownPower.POWER_ID));
         }
+        CardCrawlGame.music.fadeOutTempBGM();
+        CardCrawlGame.music.unsilenceBGM();
+    }
+
+    public void onCombatEnd(){
+
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

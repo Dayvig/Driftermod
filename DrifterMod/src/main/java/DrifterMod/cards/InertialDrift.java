@@ -61,7 +61,7 @@ public class InertialDrift extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, tmp,
                     DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, damage));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, damage), damage));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, p.getPower(DriftPower.POWER_ID).amount), p.getPower(DriftPower.POWER_ID).amount));
         }
     }
 

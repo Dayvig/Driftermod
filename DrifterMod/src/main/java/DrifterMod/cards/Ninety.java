@@ -73,8 +73,7 @@ public class Ninety extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_DAMAGE);
-            this.upgradeMagicNumber(UPGRADE_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

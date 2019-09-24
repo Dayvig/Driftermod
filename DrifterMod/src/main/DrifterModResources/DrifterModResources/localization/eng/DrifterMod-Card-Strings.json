@@ -1,15 +1,15 @@
 {
   "DrifterMod:Twenty": {
     "NAME": "20 Degree Turn",
-    "DESCRIPTION": "Gain !B! Block. NL Drift 1"
+    "DESCRIPTION": "Gain !B! Block. NL Drift !M!"
   },
   "DrifterMod:Sixty": {
   "NAME": "60 Degree Turn",
-  "DESCRIPTION": "Gain !B! Block. NL Drift !M! NL Next turn, gain !M! Dexterity for one turn."
+  "DESCRIPTION": "Gain !B! Block. NL Drift !M! NL Next turn, gain 3 Dexterity for one turn."
 },
   "DrifterMod:FortyFive": {
     "NAME": "45 Degree Turn",
-    "DESCRIPTION": "Deal !D! damage. NL Drift 1"
+    "DESCRIPTION": "Deal !D! damage. NL Drift !M!"
   },
   "DrifterMod:KeepItSteady": {
     "NAME": "Keep it Steady",
@@ -70,5 +70,84 @@
   "DrifterMod:CornerHug": {
     "NAME": "Hard Corner",
     "DESCRIPTION": "Discard 3 cards to Drift !M!"
+  },
+  "DrifterMod:TractionTires": {
+    "NAME": "Traction Tires",
+    "DESCRIPTION": "When you Drift, Drift !M! extra."
+  },
+  "DrifterMod:NightsOnFire": {
+    "NAME": "Nights of Fire",
+    "DESCRIPTION": "Deal !D! damage plus !M! for each Overdraw. NL (Deals !DrifterMod:M2! damage)"
+  },
+  "DrifterMod:GasGasGas": {
+    "NAME": "Gas Gas Gas",
+    "DESCRIPTION": "Drift !M! NL Overdraw !M! cards. NL Exhaust"
+  },
+  "DrifterMod:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "DrifterMod:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "DrifterMod:BobWeave": {
+    "NAME": "Bob and Weave",
+    "DESCRIPTION": "Gain !B! Block. NL Overdraw !M! card next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL Overdraw !M! card next turn.",
+      "Gain !B! Block. NL Overdraw !M! cards next turn."
+    ]
+  },
+  "DrifterMod:Swerve": {
+    "NAME": "Swerve",
+    "DESCRIPTION": "Drift !M! NL Gain 3 Draw-down NL Gain 1 Vulnerable."
+  },
+  "DrifterMod:PolePosition": {
+    "NAME": "Pole Position",
+    "DESCRIPTION": "If you have Overdraw, deal !D! damage and gain !B! Block."
+  },
+  "DrifterMod:OneOFive": {
+    "NAME": "105 Degree Turn",
+    "DESCRIPTION": "Drift !M! NL Next turn, Drift !M!"
+  },
+  "DrifterMod:DriftKing": {
+    "NAME": "Drift King",
+    "DESCRIPTION": "Drift !M!"
+  },
+  "DrifterMod:TopSpeed": {
+    "NAME": "Top Speed",
+    "DESCRIPTION": "Retain your hand. NL Exhaust",
+    "EXTENDED_DESCRIPTION": [
+      "Retain your hand."
+    ]
+  },
+  "DrifterMod:UTurn": {
+    "NAME": "U-Turn",
+    "DESCRIPTION": "Drift 2 NL Next turn, deal !D! damage to all enemies for each card in your hand plus your Overdraw."
+  },
+  "DrifterMod:EatMyDust": {
+    "NAME": "Eat My Dust",
+    "DESCRIPTION": "Discard 4 cards. NL Overdraw 4 cards next turn."
+  },
+  "DrifterMod:ThermalEngine": {
+    "NAME": "Thermal Engine",
+    "DESCRIPTION": "At the start of your turn, if you have Overdraw, gain [E]"
+  },
+  "DrifterMod:Kachow": {
+    "NAME": "Headlight Flash",
+    "DESCRIPTION": "Deal !D! damage and apply 1 Weak to all enemies."
+  },
+  "DrifterMod:PerfectBalance": {
+    "NAME": "Perfect Balance",
+    "DESCRIPTION": "At the start of your turn, if you played an even number of cards last turn, Draw a card.",
+    "EXTENDED_DESCRIPTION": [
+      "At the start of your turn, if you played an even number of cards last turn, Draw a card.",
+      "At the start of your turn, if you played an even number of cards last turn, Draw #b cards."
+    ]
+  },
+  "DrifterMod:Dejavu": {
+    "NAME": "Deja Vu",
+    "DESCRIPTION": "When you play a 1-cost card, discard this and add a copy of that card to your hand."
   }
 }

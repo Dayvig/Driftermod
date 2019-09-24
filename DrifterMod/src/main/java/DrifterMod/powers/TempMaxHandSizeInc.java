@@ -1,9 +1,11 @@
 package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.interfaces.hasOverdrawTrigger;
 import DrifterMod.util.TextureLoader;
 import basemod.BaseMod;
 import basemod.devcommands.draw.Draw;
+import basemod.devcommands.power.Power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -59,7 +61,22 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
 
     @Override
     public void atStartOfTurnPostDraw() {
-
+        int k = AbstractDungeon.player.gameHandSize + AbstractDungeon.player.hand.size();
+        int j = this.amount;
+        System.out.println("Handsize: " + k);
+        System.out.println("Amount: " + j);
+        while (k < BaseMod.MAX_HAND_SIZE) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
+            if (j > 0) {
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, 1));
+            }
+            j--;
+            k++;
+            if (j <= 0) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+                break;
+            }
+        }
     }
 
     @Override
@@ -69,7 +86,7 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
         while (k < BaseMod.MAX_HAND_SIZE){
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (j > 0) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, 1));
+                AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.owner, 1));
             }
             j--;
             k++;

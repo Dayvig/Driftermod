@@ -70,5 +70,45 @@
                         "",
                         ""
                 ]
+        },
+        "DrifterMod:TractionPower": {
+                "NAME": "Extra Traction",
+                "DESCRIPTIONS": [
+                        "When you Drift, Drift #b extra.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftNextTurnPower": {
+                "NAME": "Next Turn Drift",
+                "DESCRIPTIONS": [
+                        "Next turn, Drift #b",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:ThermalPower": {
+                "NAME": "Thermal Engines",
+                "DESCRIPTIONS": [
+                        "If you have Overdraw, gain #b [E]",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:AeroPower": {
+                "NAME": "Aerodynamic",
+                "DESCRIPTIONS": [
+                        "When you discard, draw #b cards (Up to amount discarded)",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:BalancePower": {
+                "NAME": "Balanced",
+                "DESCRIPTIONS": [
+                        "If you play an even number of cards this turn, draw #b cards next turn.",
+                        "",
+                        ""
+                ]
         }
 }

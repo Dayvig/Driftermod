@@ -2,7 +2,10 @@ package DrifterMod.characters;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.cards.*;
+import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.TempMaxHandSizeInc;
 import DrifterMod.relics.DefaultClickableRelic;
+import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -11,20 +14,26 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static DrifterMod.DrifterMod.*;
 import static DrifterMod.characters.TheDrifter.Enums.COLOR_YELLOW;
@@ -48,7 +57,8 @@ public class TheDrifter extends CustomPlayer {
         public static PlayerClass THE_QUEEN;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_YELLOW;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "DEFAULT_GRAY_COLOR")
+        @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -63,7 +73,7 @@ public class TheDrifter extends CustomPlayer {
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 6;
     public static final int ORB_SLOTS = 0;
-
+    public static int r = 0;
     // =============== /BASE STATS/ =================
 
 
@@ -156,27 +166,21 @@ public class TheDrifter extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         logger.info("Begin loading starter Deck Strings");
-        retVal.add(Sixty.ID);
-        retVal.add(FortyFive.ID);
-        retVal.add(Accelerate.ID);
-        retVal.add(Sixty.ID);
-        retVal.add(FortyFive.ID);
-        retVal.add(Accelerate.ID);
-        retVal.add(Brake.ID);
-        retVal.add(Brake.ID);
-        retVal.add(EngineRev.ID);
-        retVal.add(Coast.ID);
-        retVal.add(Coast.ID);
-        retVal.add(HardPass.ID);
-        retVal.add(HardPass.ID);
-        retVal.add(Tmph.ID);
-        retVal.add(Tmph.ID);
-        retVal.add(InertialDrift.ID);
-        retVal.add(InertialDrift.ID);
-        retVal.add(DefensiveDriving.ID);
-        retVal.add(DefensiveDriving.ID);
-        retVal.add(CornerHug.ID);
-        retVal.add(CornerHug.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(PerfectBalance.ID);
+        retVal.add(PerfectBalance.ID);
+        retVal.add(Dejavu.ID);
+        retVal.add(Dejavu.ID);
+        retVal.add(TractionTires.ID);
+        retVal.add(DriftKing.ID);
+
 
         return retVal;
     }
@@ -295,6 +299,14 @@ public class TheDrifter extends CustomPlayer {
     @Override
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
+        r = (int) (Math.random() * 3);
         //add action here
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        CardCrawlGame.music.fadeOutTempBGM();
+        CardCrawlGame.music.unsilenceBGM();
     }
 }

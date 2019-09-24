@@ -4,6 +4,7 @@ import DrifterMod.cards.*;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.events.IdentityCrisisEvent;
 import DrifterMod.potions.PlaceholderPotion;
+import DrifterMod.powers.BalancePower;
 import DrifterMod.relics.BottledPlaceholderRelic;
 import DrifterMod.relics.DefaultClickableRelic;
 import DrifterMod.relics.PlaceholderRelic2;
@@ -337,8 +338,9 @@ public class DrifterMod implements
         // Don't comment out/delete these cards (yet). You need 1 of e0ach type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
         BaseMod.addCard(new Tmph());
+        BaseMod.addCard(new Twenty());
         BaseMod.addCard(new FortyFive());
-        BaseMod.addCard(new Sixty());
+        BaseMod.addCard(new OneOFive());
         BaseMod.addCard(new KeepItSteady());
         BaseMod.addCard(new Accelerate());
         BaseMod.addCard(new Brake());
@@ -354,6 +356,23 @@ public class DrifterMod implements
         BaseMod.addCard(new InertialDrift());
         BaseMod.addCard(new DefensiveDriving());
         BaseMod.addCard(new CornerHug());
+        BaseMod.addCard(new TractionTires());
+        BaseMod.addCard(new GasGasGas());
+        BaseMod.addCard(new NightsOnFire());
+        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new BobWeave());
+        BaseMod.addCard(new Swerve());
+        BaseMod.addCard(new OneOFive());
+        BaseMod.addCard(new DriftKing());
+        BaseMod.addCard(new TopSpeed());
+        BaseMod.addCard(new UTurn());
+        BaseMod.addCard(new EatMyDust());
+        BaseMod.addCard(new ThermalEngine());
+        BaseMod.addCard(new Kachow());
+        BaseMod.addCard(new AeroChassis());
+        BaseMod.addCard(new PerfectBalance());
+        BaseMod.addCard(new Dejavu());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -362,8 +381,9 @@ public class DrifterMod implements
         // before playing your mod.
 
         UnlockTracker.unlockCard(Tmph.ID);
+        UnlockTracker.unlockCard(Twenty.ID);
         UnlockTracker.unlockCard(FortyFive.ID);
-        UnlockTracker.unlockCard(Sixty.ID);
+        UnlockTracker.unlockCard(OneOFive.ID);
         UnlockTracker.unlockCard(KeepItSteady.ID);
         UnlockTracker.unlockCard(Accelerate.ID);
         UnlockTracker.unlockCard(Brake.ID);
@@ -378,8 +398,23 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(InertialDrift.ID);
         UnlockTracker.unlockCard(DefensiveDriving.ID);
         UnlockTracker.unlockCard(CornerHug.ID);
-
-
+        UnlockTracker.unlockCard(TractionTires.ID);
+        UnlockTracker.unlockCard(GasGasGas.ID);
+        UnlockTracker.unlockCard(NightsOnFire.ID);
+        UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(Strike.ID);
+        UnlockTracker.unlockCard(BobWeave.ID);
+        UnlockTracker.unlockCard(Swerve.ID);
+        UnlockTracker.unlockCard(OneOFive.ID);
+        UnlockTracker.unlockCard(TopSpeed.ID);
+        UnlockTracker.unlockCard(DriftKing.ID);
+        UnlockTracker.unlockCard(UTurn.ID);
+        UnlockTracker.unlockCard(EatMyDust.ID);
+        UnlockTracker.unlockCard(ThermalEngine.ID);
+        UnlockTracker.unlockCard(Kachow.ID);
+        UnlockTracker.unlockCard(AeroChassis.ID);
+        UnlockTracker.unlockCard(PerfectBalance.ID);
+        UnlockTracker.unlockCard(Dejavu.ID);
 
         logger.info("Done adding cards!");
     }

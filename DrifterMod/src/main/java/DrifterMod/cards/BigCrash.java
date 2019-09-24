@@ -5,6 +5,7 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DrawDownPower;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.TempMaxHandSizeInc;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -58,6 +59,10 @@ public class BigCrash extends AbstractDynamicCard {
     }
 
     public void applyPowers(){
+        int k = AbstractDungeon.player.hand.size();
+        if (AbstractDungeon.player.hasPower(TempMaxHandSizeInc.POWER_ID)){
+            k += AbstractDungeon.player.getPower(TempMaxHandSizeInc.POWER_ID).amount;
+        }
         kinetic = (AbstractDungeon.player.maxHealth/20) * AbstractDungeon.player.hand.size();
         baseDamage = kinetic;
         initializeDescription();

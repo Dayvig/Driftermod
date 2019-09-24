@@ -39,14 +39,17 @@ public class FortyFive extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
-    // /STAT DECLARATION/
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
+    // /STAT DECLARATION//
 
 
     public FortyFive() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
 
@@ -57,7 +60,7 @@ public class FortyFive extends AbstractDynamicCard {
         if (!p.hasPower(DriftingPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
     }
 
     // Upgraded stats.
@@ -66,6 +69,7 @@ public class FortyFive extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

@@ -26,7 +26,7 @@ public class Sixty extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DrifterMod.makeID(Sixty.class.getSimpleName());
+    public static final String ID = DrifterMod.makeID(OneOFive.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,8 +42,10 @@ public class Sixty extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
     public static final int UPGRADE_MAGIC = 1;
+    private static final int MAGIC = 1;
     private static final int COST = 2;
     private static final int BLOCK = 11;
+    private static final int UPGRADE_BLOCK = 3;
 
     // Hey want a second magic/damage/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable
@@ -55,7 +57,7 @@ public class Sixty extends AbstractDynamicCard {
 
     public Sixty() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 1;
+        baseMagicNumber = magicNumber = MAGIC;
         baseBlock = block = BLOCK;
     }
 
@@ -67,8 +69,8 @@ public class Sixty extends AbstractDynamicCard {
         if (!p.hasPower(DriftingPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,1), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p ,new DexterityNextTurnPower(p,p,this.magicNumber+2),this.magicNumber+2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p ,new DexterityNextTurnPower(p,p,3),3));
     }
 
     //Upgraded stats.
@@ -76,6 +78,7 @@ public class Sixty extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(UPGRADE_BLOCK);
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
