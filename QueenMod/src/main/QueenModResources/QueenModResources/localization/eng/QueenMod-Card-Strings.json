@@ -357,7 +357,7 @@
   },
   "QueenMod:HoldPosition":{
     "NAME": "Hold Position",
-    "DESCRIPTION": "Gain !B! block. Add 2 queenmod:Drones to your draw pile. Recall your queenmod:Swarm."
+    "DESCRIPTION": "Gain !B! block. Add !M! queenmod:Drones to your draw pile. Recall your queenmod:Swarm."
   },
   "QueenMod:Rally":{
     "NAME": "Rally",
@@ -415,11 +415,12 @@
   },
   "QueenMod:SecretService": {
     "NAME": "Secret Service",
-    "DESCRIPTION": "Exhaust one of each type of queenmod:Hive card in your draw pile. Combine them into a W.A.S.P. and add it to your hand. Exhaust."
+    "DESCRIPTION": "Exhaust one of each type of queenmod:Hive card in your draw pile. Combine them into a W.A.S.P. and add it to your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust one of each type of queenmod:Hive card in your draw pile. Combine them into a W.A.S.P. and add it to your hand."
   },
   "QueenMod:WASP": {
     "NAME": "W.A.S.P.",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "A task force made up of a combination of queenmod:Hive cards in your draw pile."
   },
   "QueenMod:CallToArms": {
     "NAME": "Call to Arms",
@@ -433,5 +434,9 @@
   "QueenMod:PlanOfAction": {
     "NAME": "Plan of Action",
     "DESCRIPTION": "Innate. Choose to gain Strength, Dexterity, Industry or a mixture of all three. Exhaust."
+  },
+  "QueenMod:Industrialization": {
+    "NAME": "Industrialization",
+    "DESCRIPTION": "Add a Honey Factory to your draw pile for every !M! Industry. queenmod:Recruit 2 queenmod:Workerbees"
   }
 }

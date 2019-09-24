@@ -1,0 +1,114 @@
+{
+        "DrifterMod:DexDownPower": {
+                "NAME": "Dex Down",
+                "DESCRIPTIONS": [
+                        "Lose #b Dexterity at the end of the turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DexterityNextTurnPower": {
+                "NAME": "Dex Next Turn",
+                "DESCRIPTIONS": [
+                        "Gain #b Dexterity next turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftingPower": {
+                "NAME": "Drifting...",
+                "DESCRIPTIONS": [
+                        "Maintains your drift. If you don't have this, lose all your Drift at the end of the turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftPower": {
+                "NAME": "Drift",
+                "DESCRIPTIONS": [
+                        "Gain #b block and deal #b damage to all enemies at the end of the turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TempRetainPower": {
+                "NAME": "Retain",
+                "DESCRIPTIONS": [
+                        "Keep #b cards in your hand this turn only.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:ThornsDownPower": {
+                "NAME": "Thorns Down",
+                "DESCRIPTIONS": [
+                        "Lose #b Thorns at the start of your turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftStrengthDownPower": {
+                "NAME": "Drifting Strength",
+                "DESCRIPTIONS": [
+                        "Lose #b Strength if you lose your Drift.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TempMaxHandSizeInc": {
+                "NAME": "Temp Max Hand Size",
+                "DESCRIPTIONS": [
+                        "Increase your Max Hand size by #b until next turn.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:OverdrawNextTurn": {
+                "NAME": "Overdraw",
+                "DESCRIPTIONS": [
+                        "Next turn, draw 2. If your hand is full, draw when it empties.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TractionPower": {
+                "NAME": "Extra Traction",
+                "DESCRIPTIONS": [
+                        "When you Drift, Drift #b extra.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftNextTurnPower": {
+                "NAME": "Next Turn Drift",
+                "DESCRIPTIONS": [
+                        "Next turn, Drift #b",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:ThermalPower": {
+                "NAME": "Thermal Engines",
+                "DESCRIPTIONS": [
+                        "If you have Overdraw, gain #b [E]",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:AeroPower": {
+                "NAME": "Aerodynamic",
+                "DESCRIPTIONS": [
+                        "When you discard, draw #b cards (Up to amount discarded)",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:BalancePower": {
+                "NAME": "Balanced",
+                "DESCRIPTIONS": [
+                        "If you play an even number of cards this turn, draw #b cards next turn.",
+                        "",
+                        ""
+                ]
+        }
+}

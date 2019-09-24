@@ -10,6 +10,7 @@ package QueenMod.cards;
         import com.megacrit.cardcrawl.cards.DamageInfo;
         import com.megacrit.cardcrawl.characters.AbstractPlayer;
         import com.megacrit.cardcrawl.core.CardCrawlGame;
+        import com.megacrit.cardcrawl.core.Settings;
         import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         import com.megacrit.cardcrawl.localization.CardStrings;
         import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -62,8 +63,8 @@ public class Feast extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.3F));
         AbstractDungeon.actionManager.addToBottom(new FeastAction(m, new DamageInfo(p, damage, damageTypeForTurn), this.magicNumber));
-        AbstractDungeon.actionManager.addToTop(new VFXAction(new BiteEffect(m.hb_x, m.hb_y)));
     }
 
     @Override
